@@ -1,7 +1,7 @@
 import typescript from "rollup-plugin-typescript2";
 import pkg from "./package.json";
 
-export default {
+const config = {
   input: "./index.ts",
   output: [
     {
@@ -25,3 +25,5 @@ export default {
     }),
   ],
 };
+
+export default config;

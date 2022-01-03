@@ -52,7 +52,6 @@ export {
   ProgressBar,
   Radio,
   RadioGroup,
-  RadioCardGroup,
   Section,
   Separator,
   Sheet,
@@ -116,7 +115,7 @@ export {
 } from "./components/DropdownMenu";
 export { SnackbarProvider, useSnackbar } from "./components/Snackbar";
 export { Switch } from "./components/Switch";
-export { RadioCard } from "./components/RadioCard";
+export { RadioCard, RadioCardGroup } from "./components/RadioCard";
 export {
   Caption,
   Tbody,
