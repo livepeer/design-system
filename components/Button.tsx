@@ -74,8 +74,7 @@ export const Button: any = styled(DEFAULT_TAG, {
   "&:hover": { bc: "$neutral5" },
   "&:active": { bc: "$neutral6" },
   "&:disabled": {
-    bc: "$neutral2",
-    color: "$neutral8",
+    opacity: 0.5,
     cursor: "not-allowed",
   },
 
@@ -118,8 +117,7 @@ export const Button: any = styled(DEFAULT_TAG, {
         "&:hover": { bc: "$primary5" },
         "&:active": { bc: "$primary6" },
         "&:disabled": {
-          bc: "$primary2",
-          color: "$primary8",
+          opacity: 0.5,
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
           {
@@ -133,8 +131,7 @@ export const Button: any = styled(DEFAULT_TAG, {
         "&:hover": { bc: "$neutral5" },
         "&:active": { bc: "$neutral6" },
         "&:disabled": {
-          bc: "$neutral4",
-          color: "$neutral8",
+          opacity: 0.5,
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
           {
@@ -153,9 +150,7 @@ export const Button: any = styled(DEFAULT_TAG, {
           bc: "hsla(0,100%,100%,.3)",
         },
         "&:disabled": {
-          bc: "hsla(0,100%,100%,.2)",
-          color: "white",
-          opacity: 0.4,
+          opacity: 0.5,
         },
       },
       transparentBlack: {
