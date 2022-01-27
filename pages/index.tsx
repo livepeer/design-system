@@ -136,7 +136,7 @@ function Home() {
       <Banner id="banner">
         <RocketIcon />
         <Text size="2" css={{ fontWeight: 500 }}>
-          The Livepeer.com dashboard got a redesign!
+          The Livepeer explorer got a redesign!
         </Text>
         <Separator orientation="vertical" />
         <Link href="#">
@@ -595,10 +595,10 @@ function Home() {
         <Section size="3">
           <Container size="2">
             <Heading size="4" css={{ ta: "center", mb: "$3" }}>
-              Livepeer.com UI test suite
+              Livepeer Design System UI test suite
             </Heading>
             <Paragraph size="2" css={{ ta: "center" }}>
-              An environment for testing the Livepeer.com design system.
+              An environment for testing the Livepeer Design System.
             </Paragraph>
           </Container>
         </Section>
