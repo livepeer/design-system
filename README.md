@@ -1,6 +1,6 @@
 # Documentation
 
-Design system for Livepeer products
+Design system for Livepeer VS products
 
 ## Documentation
 
