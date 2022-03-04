@@ -2133,7 +2133,7 @@ function Home() {
               Alert Dialog
             </Heading>
             <AlertDialog>
-              <AlertDialogTrigger>
+              <AlertDialogTrigger asChild>
                 <Button>Alert Dialog</Button>
               </AlertDialogTrigger>
               <AlertDialogContent>
@@ -2146,10 +2146,10 @@ function Home() {
                   </Text>
                 </AlertDialogDescription>
                 <Flex css={{ jc: "flex-end", gap: "$3", mt: "$5" }}>
-                  <AlertDialogCancel>
+                  <AlertDialogCancel asChild>
                     <Button ghost>Cancel</Button>
                   </AlertDialogCancel>
-                  <AlertDialogAction>
+                  <AlertDialogAction asChild>
                     <Button variant="red">Delete</Button>
                   </AlertDialogAction>
                 </Flex>
