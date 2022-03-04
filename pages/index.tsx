@@ -108,7 +108,6 @@ import {
   AccordionItem,
   AccordionPanel,
 } from "../components/Accordian";
-// import { Dialog, DialogContent, DialogTrigger } from "../components/Dialog";
 import { SnackbarProvider } from "../components/Snackbar";
 import { Button } from "../components/Button";
 import { Link } from "../components/Link";
@@ -118,17 +117,6 @@ import { Switch } from "../components/Switch";
 
 import { AppBar } from "../custom/AppBar";
 import Snackbar from "../custom/Snackbar";
-
-const StyledCross1Icon = styled(Cross1Icon, {
-  color: "$hiContrast",
-});
-
-const StyledInfoIcon = styled(InfoCircledIcon, {
-  color: "$neutral9",
-  mr: "$2",
-  minWidth: 15,
-  minHeight: 15,
-});
 
 function Home() {
   return (
@@ -595,10 +583,10 @@ function Home() {
         <Section size="3">
           <Container size="2">
             <Heading size="4" css={{ ta: "center", mb: "$3" }}>
-              Livepeer Design System UI test suite
+              Livepeer VS Design System UI test suite
             </Heading>
             <Paragraph size="2" css={{ ta: "center" }}>
-              An environment for testing the Livepeer Design System.
+              An environment for testing the Livepeer VS Design System.
             </Paragraph>
           </Container>
         </Section>

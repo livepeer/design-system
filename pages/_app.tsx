@@ -18,8 +18,8 @@ function App({ Component, pageProps }) {
         defaultTheme="system"
         value={{
           ...themeMap,
-          dark: "dark-theme-green",
-          light: "light-theme-green",
+          dark: "dark-theme-violet",
+          light: "light-theme-violet",
         }}
       >
         <div>
