@@ -111,7 +111,6 @@ import {
 import { SnackbarProvider } from "../components/Snackbar";
 import { Button } from "../components/Button";
 import { Link } from "../components/Link";
-import { Promo } from "../components/Promo";
 import { Label } from "../components/Label";
 import { Switch } from "../components/Switch";
 
