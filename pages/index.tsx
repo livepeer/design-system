@@ -582,10 +582,10 @@ function Home() {
         <Section size="3">
           <Container size="2">
             <Heading size="4" css={{ ta: "center", mb: "$3" }}>
-              Livepeer VS Design System UI test suite
+              Livepeer Studio Design System UI test suite
             </Heading>
             <Paragraph size="2" css={{ ta: "center" }}>
-              An environment for testing the Livepeer VS Design System.
+              An environment for testing the Livepeer Studio Design System.
             </Paragraph>
           </Container>
         </Section>
