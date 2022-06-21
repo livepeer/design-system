@@ -64,7 +64,6 @@ export const Button: any = styled(DEFAULT_TAG, {
   fontFamily: "$body",
   fontSize: "$2",
   fontWeight: 600,
-  fontVariantNumeric: "tabular-nums",
   ai: "center",
   cursor: "pointer",
   px: "$3",

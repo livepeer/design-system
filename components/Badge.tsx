@@ -36,7 +36,6 @@ export const Badge = styled("span", {
   borderRadius: "$pill",
   color: "$slate11",
   whiteSpace: "nowrap",
-  fontVariantNumeric: "tabular-nums",
 
   variants: {
     size: {
