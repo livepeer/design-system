@@ -7,7 +7,6 @@ export const Text: any = styled(DEFAULT_TAG, {
   lineHeight: 1.5,
   margin: "0",
   fontWeight: 400,
-  fontVariantNumeric: "tabular-nums",
   display: "block",
 
   variants: {
