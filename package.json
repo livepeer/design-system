@@ -1,6 +1,6 @@
 {
   "name": "@livepeer/design-system",
-  "version": "0.0.0-beta.7",
+  "version": "0.0.0-beta.8",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.es.js",

@@ -7,7 +7,6 @@ export {
   Box,
   Checkbox,
   Code,
-  Container,
   ContextMenu,
   ContextMenuTrigger,
   ContextMenuContent,
@@ -107,6 +106,7 @@ export { Text } from "./components/Text";
 export { TextField } from "./components/TextField";
 export { Select } from "./components/Select";
 export { Card } from "./components/Card";
+export { Container } from "./components/Container";
 export { Badge } from "./components/Badge";
 export {
   DropdownMenuItem,
