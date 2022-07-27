@@ -7,6 +7,11 @@ export default class Document extends NextDocument {
     return (
       <Html lang="en">
         <Head>
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Inter&display=swap"
+          />
+
           <style
             id="stitches"
             dangerouslySetInnerHTML={{ __html: getCssText() }}
