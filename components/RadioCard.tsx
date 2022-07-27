@@ -1,5 +1,6 @@
 import React from "react";
-import { styled, config } from "@modulz/design-system";
+import { config } from "@modulz/design-system";
+import { styled } from "../stitches.config";
 import type * as Stitches from "@stitches/react";
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
 
@@ -30,6 +31,7 @@ const StyledRadioIndicator = styled("div", {
 });
 
 const StyledRadio = styled(RadioGroupPrimitive.Item, {
+  length: 3,
   all: "unset",
   boxSizing: "border-box",
   userSelect: "none",

@@ -1,10 +1,11 @@
-import { styled, Box } from "@modulz/design-system";
+import { Box } from "@modulz/design-system";
+import { styled } from "../stitches.config";
 
 const DEFAULT_TAG = Box;
 
 type BannerType = React.ComponentProps<typeof DEFAULT_TAG>;
 
-export const Banner: any = styled(DEFAULT_TAG, {
+export const Banner = styled(DEFAULT_TAG, {
   // Reset
   boxSizing: "border-box",
   "&::before": {

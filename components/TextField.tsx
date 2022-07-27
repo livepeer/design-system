@@ -2,7 +2,7 @@ import { styled } from "../stitches.config";
 
 const DEFAULT_TAG = "input";
 
-const StyledTextField: any = styled(DEFAULT_TAG, {
+const StyledTextField = styled(DEFAULT_TAG, {
   // Reset
   appearance: "none",
   borderWidth: "0",

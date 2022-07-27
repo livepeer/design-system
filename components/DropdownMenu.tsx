@@ -1,15 +1,19 @@
 import {
-  styled,
   DropdownMenuItem as DropdownMenuItemBase,
   DropdownMenuCheckboxItem as DropdownMenuCheckboxItemBase,
   DropdownMenuRadioItem as DropdownMenuRadioItemBase,
 } from "@modulz/design-system";
-import { naturalPairings } from "../stitches.config";
+import { CSS } from "@stitches/react";
+import {
+  styled,
+  naturalPairingsKeys,
+  NaturalPairingsKeys,
+} from "../stitches.config";
 
-const colorVairants: any = {};
+const colorVariants: { [key in NaturalPairingsKeys]?: CSS } = {};
 
-for (const color in naturalPairings) {
-  colorVairants[color] = {
+for (const color of naturalPairingsKeys) {
+  colorVariants[color] = {
     "&:focus": {
       outline: "none",
       backgroundColor: `$${color}4`,
@@ -18,7 +22,7 @@ for (const color in naturalPairings) {
   };
 }
 
-export const DropdownMenuItem: any = styled(DropdownMenuItemBase, {
+export const DropdownMenuItem = styled(DropdownMenuItemBase, {
   variants: {
     color: {
       primary: {
@@ -28,7 +32,7 @@ export const DropdownMenuItem: any = styled(DropdownMenuItemBase, {
           color: "$hiContrast",
         },
       },
-      ...colorVairants,
+      ...colorVariants,
     },
   },
   defaultVariants: {
@@ -36,7 +40,7 @@ export const DropdownMenuItem: any = styled(DropdownMenuItemBase, {
   },
 });
 
-export const DropdownMenuRadioItem: any = styled(DropdownMenuRadioItemBase, {
+export const DropdownMenuRadioItem = styled(DropdownMenuRadioItemBase, {
   variants: {
     color: {
       primary: {
@@ -46,7 +50,7 @@ export const DropdownMenuRadioItem: any = styled(DropdownMenuRadioItemBase, {
           color: "$hiContrast",
         },
       },
-      ...colorVairants,
+      ...colorVariants,
     },
   },
   defaultVariants: {
@@ -54,23 +58,20 @@ export const DropdownMenuRadioItem: any = styled(DropdownMenuRadioItemBase, {
   },
 });
 
-export const DropdownMenuCheckboxItem: any = styled(
-  DropdownMenuCheckboxItemBase,
-  {
-    variants: {
-      color: {
-        primary: {
-          "&:focus": {
-            outline: "none",
-            backgroundColor: "$primary4",
-            color: "$hiContrast",
-          },
+export const DropdownMenuCheckboxItem = styled(DropdownMenuCheckboxItemBase, {
+  variants: {
+    color: {
+      primary: {
+        "&:focus": {
+          outline: "none",
+          backgroundColor: "$primary4",
+          color: "$hiContrast",
         },
-        ...colorVairants,
       },
+      ...colorVariants,
     },
-    defaultVariants: {
-      color: "primary",
-    },
-  }
-);
+  },
+  defaultVariants: {
+    color: "primary",
+  },
+});

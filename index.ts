@@ -1,3 +1,6 @@
+import { DesignSystemProvider as DesignSystemProviderModulz } from "@modulz/design-system";
+import React from "react";
+
 export {
   Alert,
   Avatar,
@@ -18,7 +21,6 @@ export {
   ContextMenuRadioItem,
   ContextMenuSeparator,
   ControlGroup,
-  DesignSystemProvider,
   DropdownMenu,
   DropdownMenuTrigger,
   DropdownMenuContent,
@@ -152,3 +154,7 @@ export {
   globalCss,
   keyframes,
 } from "./stitches.config";
+
+export const DesignSystemProvider = DesignSystemProviderModulz as React.FC<{
+  children: React.ReactNode;
+}>;
