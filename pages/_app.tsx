@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import "../styles.css";
 import { DesignSystemProvider } from "../";
-import { ThemeKey, themeKeys, themes } from "../stitches.config";
+import { themeKeys, themes } from "../stitches.config";
 import { ThemeProvider } from "next-themes";
 import { AppProps } from "next/app";
 

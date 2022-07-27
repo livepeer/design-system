@@ -59,7 +59,6 @@ import {
   whiteA,
   blackA,
 } from "@radix-ui/colors";
-export { styled } from "@stitches/react";
 
 const fonts = {
   body: "Inter, -apple-system, system-ui, sans-serif",
@@ -302,4 +301,10 @@ function getThemes() {
 
 export const themes = getThemes();
 
-export { css, getCssText, globalCss, keyframes } from "@modulz/design-system";
+export {
+  styled,
+  css,
+  getCssText,
+  globalCss,
+  keyframes,
+} from "@modulz/design-system";

@@ -3,7 +3,6 @@ import { styled } from "../stitches.config";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { ChevronRightIcon } from "@radix-ui/react-icons";
 
-import * as Polymorphic from "@radix-ui/react-polymorphic";
 import omit from "lodash.omit";
 
 const StyledAccordion = styled(AccordionPrimitive.Root, {
@@ -91,12 +90,12 @@ const StyledHeader = styled(AccordionPrimitive.Header, {
   all: "unset",
 });
 
-type AccordionButtonOwnProps = Polymorphic.OwnProps<
+type AccordionButtonOwnProps = React.ComponentProps<
   typeof AccordionPrimitive.Trigger
 >;
 
-type AccordionButtonComponent = Polymorphic.ForwardRefComponent<
-  Polymorphic.IntrinsicElement<typeof AccordionPrimitive.Trigger>,
+type AccordionButtonComponent = React.ForwardRefRenderFunction<
+  typeof AccordionPrimitive.Trigger,
   AccordionButtonOwnProps
 > &
   React.FC<{ children?: React.ReactNode }>;

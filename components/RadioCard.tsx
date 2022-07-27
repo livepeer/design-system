@@ -31,7 +31,6 @@ const StyledRadioIndicator = styled("div", {
 });
 
 const StyledRadio = styled(RadioGroupPrimitive.Item, {
-  length: 3,
   all: "unset",
   boxSizing: "border-box",
   userSelect: "none",

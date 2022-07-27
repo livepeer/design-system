@@ -150,10 +150,8 @@ __metadata:
     "@radix-ui/react-dropdown-menu": 1.0.0
     "@radix-ui/react-hover-card": 1.0.0
     "@radix-ui/react-icons": 1.1.1
-    "@radix-ui/react-id": ^1.0.0
     "@radix-ui/react-label": ^1.0.0
     "@radix-ui/react-menu": 1.0.0
-    "@radix-ui/react-polymorphic": 0.0.14
     "@radix-ui/react-popover": 1.0.0
     "@radix-ui/react-portal": 1.0.0
     "@radix-ui/react-primitive": ^1.0.0
@@ -761,7 +759,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@radix-ui/react-id@npm:1.0.0, @radix-ui/react-id@npm:^1.0.0":
+"@radix-ui/react-id@npm:1.0.0":
   version: 1.0.0
   resolution: "@radix-ui/react-id@npm:1.0.0"
   dependencies:
@@ -816,15 +814,6 @@ __metadata:
     react: ^16.8 || ^17.0 || ^18.0
     react-dom: ^16.8 || ^17.0 || ^18.0
   checksum: 4bd4cba573ba919895d39cf8d98faef9348e53c14d498a87709cf80358b8edf3e741053bc753f4e9a404b747f156fc5fbb8aafc56ae5daf894d991b24724216a
-  languageName: node
-  linkType: hard
-
-"@radix-ui/react-polymorphic@npm:0.0.14":
-  version: 0.0.14
-  resolution: "@radix-ui/react-polymorphic@npm:0.0.14"
-  peerDependencies:
-    react: ^16.8 || ^17.0
-  checksum: 942344b369257e8528d230d00f3a797ac348eb1aa502738045f8500ff0da48191e8b95b0e3fa04072c0eba5ab3956625eeafcade2a4e6b206749e9c83988d316
   languageName: node
   linkType: hard
 
