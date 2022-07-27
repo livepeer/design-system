@@ -25,7 +25,6 @@ const StyledTextField = styled(DEFAULT_TAG, {
   backgroundColor: "$loContrast",
   boxShadow: "inset 0 0 0 1px $colors$neutral7",
   color: "$hiContrast",
-  fontVariantNumeric: "tabular-nums",
 
   "&:-webkit-autofill": {
     boxShadow:

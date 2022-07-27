@@ -111,7 +111,6 @@ import {
 import { SnackbarProvider } from "../components/Snackbar";
 import { Button } from "../components/Button";
 import { Link } from "../components/Link";
-import { Promo } from "../components/Promo";
 import { Label } from "../components/Label";
 import { Switch } from "../components/Switch";
 
@@ -583,10 +582,10 @@ function Home() {
         <Section size="3">
           <Container size="2">
             <Heading size="4" css={{ ta: "center", mb: "$3" }}>
-              Livepeer VS Design System UI test suite
+              Livepeer Studio Design System UI test suite
             </Heading>
             <Paragraph size="2" css={{ ta: "center" }}>
-              An environment for testing the Livepeer VS Design System.
+              An environment for testing the Livepeer Studio Design System.
             </Paragraph>
           </Container>
         </Section>
@@ -2133,7 +2132,7 @@ function Home() {
               Alert Dialog
             </Heading>
             <AlertDialog>
-              <AlertDialogTrigger>
+              <AlertDialogTrigger asChild>
                 <Button>Alert Dialog</Button>
               </AlertDialogTrigger>
               <AlertDialogContent>
@@ -2146,10 +2145,10 @@ function Home() {
                   </Text>
                 </AlertDialogDescription>
                 <Flex css={{ jc: "flex-end", gap: "$3", mt: "$5" }}>
-                  <AlertDialogCancel>
+                  <AlertDialogCancel asChild>
                     <Button ghost>Cancel</Button>
                   </AlertDialogCancel>
-                  <AlertDialogAction>
+                  <AlertDialogAction asChild>
                     <Button variant="red">Delete</Button>
                   </AlertDialogAction>
                 </Flex>
