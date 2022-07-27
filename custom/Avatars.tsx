@@ -99,7 +99,7 @@ export function Avatars() {
               </PopoverTrigger>
               <PopoverContent css={{ padding: "$3" }}>
                 <Text size="2" css={{ lineHeight: "18px" }}>
-                  The other main improvement is with tables, which we'll
+                  The other main improvement is with tables, which {"we'll"}
                   probably use a lot. With horizontal overflow on small devices
                   and when zoomed in.
                 </Text>
@@ -116,7 +116,7 @@ export function Avatars() {
               </PopoverTrigger>
               <PopoverContent css={{ padding: "$3" }}>
                 <Text size="2" css={{ lineHeight: "18px" }}>
-                  The other main improvement is with tables, which we'll
+                  The other main improvement is with tables, which {"we'll"}
                   probably use a lot. With horizontal overflow on small devices
                   and when zoomed in.
                 </Text>
@@ -129,7 +129,7 @@ export function Avatars() {
               </PopoverTrigger>
               <PopoverContent css={{ padding: "$3" }}>
                 <Text size="2" css={{ lineHeight: "18px" }}>
-                  The other main improvement is with tables, which we'll
+                  The other main improvement is with tables, which {"we'll"}
                   probably use a lot. With horizontal overflow on small devices
                   and when zoomed in.
                 </Text>
@@ -142,7 +142,7 @@ export function Avatars() {
               </PopoverTrigger>
               <PopoverContent css={{ padding: "$3" }}>
                 <Text size="2" css={{ lineHeight: "18px" }}>
-                  The other main improvement is with tables, which we'll
+                  The other main improvement is with tables, which {"we'll"}
                   probably use a lot. With horizontal overflow on small devices
                   and when zoomed in.
                 </Text>

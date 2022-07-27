@@ -1,7 +1,12 @@
+import { Box } from "@modulz/design-system";
 import React, { createContext, useState } from "react";
 import { CSSTransition } from "react-transition-group";
-import { Box } from "@modulz/design-system";
+import { CSSTransitionProps } from "react-transition-group/CSSTransition";
 import transitionStyles from "./transitionStyles";
+
+// type coercion for bad typing in lib
+const CSSTransitionTyped =
+  CSSTransition as unknown as React.FC<CSSTransitionProps>;
 
 // Snackbar default values
 export const defaultPosition = "bottom-center";
@@ -17,8 +22,14 @@ export const positions = [
 ];
 
 interface IContextProps {
-  openSnackbar: any;
-  closeSnackbar: any;
+  openSnackbar: (
+    text: string,
+    duration: number,
+    position: string,
+    style: object,
+    closeStyle: object
+  ) => void;
+  closeSnackbar: () => void;
 }
 
 // Context used by the hook useSnackbar() and HoC withSnackbar()
@@ -90,7 +101,7 @@ export const SnackbarProvider = ({ children }: Props) => {
 
       {/* Renders Snackbar on the end of the page */}
       <Box css={transitionStyles}>
-        <CSSTransition
+        <CSSTransitionTyped
           in={open}
           timeout={150}
           mountOnEnter
@@ -211,7 +222,7 @@ export const SnackbarProvider = ({ children }: Props) => {
               </Box>
             </Box>
           </Box>
-        </CSSTransition>
+        </CSSTransitionTyped>
       </Box>
     </SnackbarContext.Provider>
   );

@@ -4,6 +4,7 @@ import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { ChevronRightIcon } from "@radix-ui/react-icons";
 
 import * as Polymorphic from "@radix-ui/react-polymorphic";
+import omit from "lodash.omit";
 
 const StyledAccordion = styled(AccordionPrimitive.Root, {
   boxShadow: "0 0 0 1px $colors$neutral6",
@@ -17,7 +18,7 @@ const StyledPanel = styled(AccordionPrimitive.Content, {
   backgroundColor: "$neutral2",
 });
 
-const StyledButton: any = styled(AccordionPrimitive.Trigger, {
+const StyledButton = styled(AccordionPrimitive.Trigger, {
   all: "unset",
   boxSizing: "border-box",
   userSelect: "none",
@@ -92,28 +93,28 @@ const StyledHeader = styled(AccordionPrimitive.Header, {
 
 type AccordionButtonOwnProps = Polymorphic.OwnProps<
   typeof AccordionPrimitive.Trigger
-> & {
-  css?: any;
-};
+>;
 
 type AccordionButtonComponent = Polymorphic.ForwardRefComponent<
   Polymorphic.IntrinsicElement<typeof AccordionPrimitive.Trigger>,
   AccordionButtonOwnProps
->;
+> &
+  React.FC<{ children?: React.ReactNode }>;
 
-export const AccordionButton: any = React.forwardRef(
-  ({ children, ...props }, forwardedRef) => (
-    <StyledHeader>
-      <StyledButton {...props} ref={forwardedRef}>
-        <ChevronRightIcon />
-        {children}
-      </StyledButton>
-    </StyledHeader>
-  )
-) as AccordionButtonComponent;
+export const AccordionButton = React.forwardRef<
+  HTMLButtonElement,
+  React.HTMLProps<HTMLButtonElement>
+>(({ children, ...props }, forwardedRef) => (
+  <StyledHeader>
+    <StyledButton {...omit(props, "children", "type")} ref={forwardedRef}>
+      <ChevronRightIcon />
+      {children}
+    </StyledButton>
+  </StyledHeader>
+)) as AccordionButtonComponent;
 
 AccordionButton.displayName = "AccordionButton";
 
-export const Accordion: any = StyledAccordion;
-export const AccordionItem: any = StyledItem;
-export const AccordionPanel: any = StyledPanel;
+export const Accordion = StyledAccordion;
+export const AccordionItem = StyledItem;
+export const AccordionPanel = StyledPanel;

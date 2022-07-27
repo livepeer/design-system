@@ -1,6 +1,6 @@
-# Documentation
+# Livepeer Design System
 
-Design system for Livepeer VS products
+Design system for [Livepeer](https://livepeer.org/) products.
 
 ## Documentation
 
@@ -11,3 +11,7 @@ Visit [https://livepeer-design-system.vercel.app/](https://livepeer-design-syste
 ```
 yarn add @livepeer/design-system
 ```
+
+## License
+
+Licensed under the [MIT](./LICENSE) license.

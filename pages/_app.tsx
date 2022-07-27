@@ -2,14 +2,18 @@ import React from "react";
 import Head from "next/head";
 import "../styles.css";
 import { DesignSystemProvider } from "../";
-import { themes } from "../stitches.config";
+import { ThemeKey, themeKeys, themes } from "../stitches.config";
 import { ThemeProvider } from "next-themes";
+import { AppProps } from "next/app";
 
-function App({ Component, pageProps }) {
-  const themeMap = {};
-  Object.keys(themes).map(
-    (key, _index) => (themeMap[themes[key].className] = themes[key].className)
-  );
+function App({ Component, pageProps }: AppProps) {
+  const themeMap = themeKeys.reduce(
+    (prev, key) => ({
+      ...prev,
+      [themes[key].className]: themes[key].className,
+    }),
+    {}
+  ) as { [key: string]: string };
   return (
     <DesignSystemProvider>
       <ThemeProvider
@@ -24,7 +28,7 @@ function App({ Component, pageProps }) {
       >
         <div>
           <Head>
-            <title>Design System</title>
+            <title>Livepeer Design System</title>
             <link
               rel="stylesheet"
               href="https://develop.modulz.app/fonts/fonts.css"

@@ -1,13 +1,13 @@
 import {
-  styled,
   TabsTrigger as TabsTriggerBase,
   TabsContent as TabsContentBase,
   TabsList as TabsListBase,
 } from "@modulz/design-system";
+import { styled } from "../stitches.config";
 
 export { Tabs } from "@modulz/design-system";
 
-export const TabsTrigger: any = styled(TabsTriggerBase, {
+export const TabsTrigger = styled(TabsTriggerBase, {
   color: "$neutral11",
   bc: "transparent",
   '&[data-state="active"]': {
@@ -30,7 +30,7 @@ export const TabsTrigger: any = styled(TabsTriggerBase, {
   },
 });
 
-export const TabsList: any = styled(TabsListBase, {
+export const TabsList = styled(TabsListBase, {
   "&:focus": {
     boxShadow: "inset 0 0 0 1px $neutral8, 0 0 0 1px $neutral8",
   },
@@ -39,7 +39,7 @@ export const TabsList: any = styled(TabsListBase, {
   },
 });
 
-export const TabsContent: any = styled(TabsContentBase, {
+export const TabsContent = styled(TabsContentBase, {
   "&:focus": {
     boxShadow: "inset 0 0 0 1px $neutral8, 0 0 0 1px $neutral8",
   },

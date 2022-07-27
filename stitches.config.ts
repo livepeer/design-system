@@ -59,11 +59,12 @@ import {
   whiteA,
   blackA,
 } from "@radix-ui/colors";
+export { styled } from "@stitches/react";
 
 const fonts = {
   body: "Inter, -apple-system, system-ui, sans-serif",
   mono: "menlo, monospace",
-};
+} as const;
 
 const lightThemeColors = {
   ...gray,
@@ -96,7 +97,7 @@ const lightThemeColors = {
   ...gold,
   ...whiteA,
   ...blackA,
-};
+} as const;
 
 const darkThemeColors = {
   ...grayDark,
@@ -129,9 +130,42 @@ const darkThemeColors = {
   ...goldDark,
   ...whiteA,
   ...blackA,
+} as const;
+
+export const naturalPairingsKeys = [
+  "tomato",
+  "red",
+  "crimson",
+  "pink",
+  "plum",
+  "purple",
+  "violet",
+
+  "indigo",
+  "blue",
+  "sky",
+  "cyan",
+
+  "teal",
+  "mint",
+  "green",
+
+  "grass",
+  "lime",
+
+  "yellow",
+  "amber",
+  "orange",
+  "brown",
+] as const;
+
+export type NaturalPairingsKeys = typeof naturalPairingsKeys[number];
+
+export type NaturalPairings = {
+  [K in NaturalPairingsKeys]: string;
 };
 
-export const naturalPairings = {
+export const naturalPairings: NaturalPairings = {
   tomato: "mauve",
   red: "mauve",
   crimson: "mauve",
@@ -156,104 +190,116 @@ export const naturalPairings = {
   amber: "sand",
   orange: "sand",
   brown: "sand",
-};
+} as const;
+
+export type ThemeKey =
+  | `light-theme-${NaturalPairingsKeys}`
+  | `dark-theme-${NaturalPairingsKeys}`;
+
+export const themeKeys: ThemeKey[] = [
+  ...naturalPairingsKeys.map(
+    (e) => `light-theme-${e}` as `light-theme-${NaturalPairingsKeys}`
+  ),
+  ...naturalPairingsKeys.map(
+    (e) => `dark-theme-${e}` as `dark-theme-${NaturalPairingsKeys}`
+  ),
+];
 
 function getThemes() {
-  const themes: any = {};
-  for (const [primary, neutral] of Object.entries(naturalPairings)) {
-    themes[`light-theme-${primary}`] = createTheme(`light-theme-${primary}`, {
-      colors: {
-        ...lightThemeColors,
+  const themes = naturalPairingsKeys.reduce(
+    (prev, primary) => ({
+      ...prev,
+      [`light-theme-${primary}`]: createTheme(`light-theme-${primary}`, {
+        colors: {
+          ...lightThemeColors,
 
-        // Semantic colors
-        primary1: `$${primary}1`,
-        primary2: `$${primary}2`,
-        primary3: `$${primary}3`,
-        primary4: `$${primary}4`,
-        primary5: `$${primary}5`,
-        primary6: `$${primary}6`,
-        primary7: `$${primary}7`,
-        primary8: `$${primary}8`,
-        primary9: `$${primary}9`,
-        primary10: `$${primary}10`,
-        primary11: `$${primary}11`,
-        primary12: `$${primary}12`,
+          // Semantic colors
+          primary1: `$${primary}1`,
+          primary2: `$${primary}2`,
+          primary3: `$${primary}3`,
+          primary4: `$${primary}4`,
+          primary5: `$${primary}5`,
+          primary6: `$${primary}6`,
+          primary7: `$${primary}7`,
+          primary8: `$${primary}8`,
+          primary9: `$${primary}9`,
+          primary10: `$${primary}10`,
+          primary11: `$${primary}11`,
+          primary12: `$${primary}12`,
 
-        neutral1: `$${neutral}1`,
-        neutral2: `$${neutral}2`,
-        neutral3: `$${neutral}3`,
-        neutral4: `$${neutral}4`,
-        neutral5: `$${neutral}5`,
-        neutral6: `$${neutral}6`,
-        neutral7: `$${neutral}7`,
-        neutral8: `$${neutral}8`,
-        neutral9: `$${neutral}9`,
-        neutral10: `$${neutral}10`,
-        neutral11: `$${neutral}11`,
-        neutral12: `$${neutral}12`,
+          neutral1: `$${naturalPairings[primary]}1`,
+          neutral2: `$${naturalPairings[primary]}2`,
+          neutral3: `$${naturalPairings[primary]}3`,
+          neutral4: `$${naturalPairings[primary]}4`,
+          neutral5: `$${naturalPairings[primary]}5`,
+          neutral6: `$${naturalPairings[primary]}6`,
+          neutral7: `$${naturalPairings[primary]}7`,
+          neutral8: `$${naturalPairings[primary]}8`,
+          neutral9: `$${naturalPairings[primary]}9`,
+          neutral10: `$${naturalPairings[primary]}10`,
+          neutral11: `$${naturalPairings[primary]}11`,
+          neutral12: `$${naturalPairings[primary]}12`,
 
-        hiContrast: `$${neutral}12`,
-        loContrast: "$whiteA12",
-        canvas: "hsl(0 0% 93%)",
-        panel: `$${neutral}2`,
-        transparentPanel: "hsl(0 0% 0% / 97%)",
-        shadowLight: "hsl(206 22% 7% / 35%)",
-        shadowDark: "hsl(206 22% 7% / 20%)",
-      },
-      fonts,
-    });
+          hiContrast: `$${naturalPairings[primary]}12`,
+          loContrast: "$whiteA12",
+          canvas: "hsl(0 0% 93%)",
+          panel: `$${naturalPairings[primary]}2`,
+          transparentPanel: "hsl(0 0% 0% / 97%)",
+          shadowLight: "hsl(206 22% 7% / 35%)",
+          shadowDark: "hsl(206 22% 7% / 20%)",
+        },
+        fonts,
+      }),
+      [`dark-theme-${primary}`]: createTheme(`dark-theme-${primary}`, {
+        colors: {
+          ...darkThemeColors,
 
-    themes[`dark-theme-${primary}`] = createTheme(`dark-theme-${primary}`, {
-      colors: {
-        ...darkThemeColors,
+          // Semantic colors
+          primary1: `$${primary}1`,
+          primary2: `$${primary}2`,
+          primary3: `$${primary}3`,
+          primary4: `$${primary}4`,
+          primary5: `$${primary}5`,
+          primary6: `$${primary}6`,
+          primary7: `$${primary}7`,
+          primary8: `$${primary}8`,
+          primary9: `$${primary}9`,
+          primary10: `$${primary}10`,
+          primary11: `$${primary}11`,
+          primary12: `$${primary}12`,
 
-        // Semantic colors
-        primary1: `$${primary}1`,
-        primary2: `$${primary}2`,
-        primary3: `$${primary}3`,
-        primary4: `$${primary}4`,
-        primary5: `$${primary}5`,
-        primary6: `$${primary}6`,
-        primary7: `$${primary}7`,
-        primary8: `$${primary}8`,
-        primary9: `$${primary}9`,
-        primary10: `$${primary}10`,
-        primary11: `$${primary}11`,
-        primary12: `$${primary}12`,
+          neutral1: `$${naturalPairings[primary]}1`,
+          neutral2: `$${naturalPairings[primary]}2`,
+          neutral3: `$${naturalPairings[primary]}3`,
+          neutral4: `$${naturalPairings[primary]}4`,
+          neutral5: `$${naturalPairings[primary]}5`,
+          neutral6: `$${naturalPairings[primary]}6`,
+          neutral7: `$${naturalPairings[primary]}7`,
+          neutral8: `$${naturalPairings[primary]}8`,
+          neutral9: `$${naturalPairings[primary]}9`,
+          neutral10: `$${naturalPairings[primary]}10`,
+          neutral11: `$${naturalPairings[primary]}11`,
+          neutral12: `$${naturalPairings[primary]}12`,
 
-        neutral1: `$${neutral}1`,
-        neutral2: `$${neutral}2`,
-        neutral3: `$${neutral}3`,
-        neutral4: `$${neutral}4`,
-        neutral5: `$${neutral}5`,
-        neutral6: `$${neutral}6`,
-        neutral7: `$${neutral}7`,
-        neutral8: `$${neutral}8`,
-        neutral9: `$${neutral}9`,
-        neutral10: `$${neutral}10`,
-        neutral11: `$${neutral}11`,
-        neutral12: `$${neutral}12`,
+          hiContrast: `$${naturalPairings[primary]}12`,
+          loContrast: `$${naturalPairings[primary]}1`,
+          canvas: "hsl(0 0% 15%)",
+          panel: `$${naturalPairings[primary]}2`,
+          transparentPanel: "hsl(0 100% 100% / 97%)",
+          shadowLight: "hsl(206 22% 7% / 35%)",
+          shadowDark: "hsl(206 22% 7% / 20%)",
+        },
+        fonts,
+      }),
+    }),
+    {}
+  ) as {
+    [key in ThemeKey]: ReturnType<typeof createTheme>;
+  };
 
-        hiContrast: `$${neutral}12`,
-        loContrast: `$${neutral}1`,
-        canvas: "hsl(0 0% 15%)",
-        panel: `$${neutral}2`,
-        transparentPanel: "hsl(0 100% 100% / 97%)",
-        shadowLight: "hsl(206 22% 7% / 35%)",
-        shadowDark: "hsl(206 22% 7% / 20%)",
-      },
-      fonts,
-    });
-  }
   return themes;
 }
 
 export const themes = getThemes();
 
-export {
-  styled,
-  css,
-  getCssText,
-  globalCss,
-  keyframes,
-} from "@modulz/design-system";
+export { css, getCssText, globalCss, keyframes } from "@modulz/design-system";

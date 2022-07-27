@@ -83,6 +83,6 @@ const transitionStyles = {
     bottom: "8px",
     justifyContent: "flex-end",
   },
-};
+} as const;
 
 export default transitionStyles;

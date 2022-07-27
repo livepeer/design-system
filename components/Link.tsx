@@ -1,4 +1,5 @@
-import { styled, Text } from "@modulz/design-system";
+import { Text } from "@modulz/design-system";
+import { styled } from "../stitches.config";
 
 const DEFAULT_TAG = "a";
 

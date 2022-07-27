@@ -2,7 +2,7 @@ import { keyframes, styled } from "../stitches.config";
 import React from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 
-type DialogProps = React.ComponentProps<typeof DialogPrimitive.Root> & {
+export type DialogProps = React.ComponentProps<typeof DialogPrimitive.Root> & {
   children: React.ReactNode;
 };
 
@@ -94,11 +94,17 @@ const StyledDialogContent = styled(DialogPrimitive.Content, {
   },
 });
 
+export type DialogContentProps = React.ComponentProps<
+  typeof DialogPrimitive.Root
+> & {
+  animation?: "scale" | "fade";
+};
+
 export const DialogContent = ({
   children,
   animation = "scale",
   ...props
-}: any) => (
+}: DialogContentProps) => (
   <StyledDialogContent animation={animation} {...props}>
     {children}
   </StyledDialogContent>

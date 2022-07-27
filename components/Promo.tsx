@@ -1,8 +1,8 @@
-import { styled } from "@modulz/design-system";
+import { styled } from "../stitches.config";
 
 const DEFAULT_TAG = "div";
 
-export const Promo: any = styled(DEFAULT_TAG, {
+export const Promo = styled(DEFAULT_TAG, {
   // Reset
   boxSizing: "border-box",
   "&::before": {

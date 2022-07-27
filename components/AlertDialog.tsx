@@ -50,7 +50,7 @@ const StyledOverlay = styled(AlertDialogPrimitive.Overlay, {
 export function AlertDialog({ children, ...props }: AlertDialogProps) {
   return (
     <AlertDialogPrimitive.Root {...props}>
-      <StyledOverlay animation />
+      <StyledOverlay />
       {children}
     </AlertDialogPrimitive.Root>
   );
@@ -95,12 +95,11 @@ const StyledAlertDialogContent = styled(AlertDialogPrimitive.Content, {
   },
 });
 
-export const AlertDialogContent = ({
+export const AlertDialogContent: React.FC<AlertDialogPrimitive.AlertDialogContentProps> = ({
   children,
-  animation = "scale",
   ...props
-}: any) => (
-  <StyledAlertDialogContent animation={animation} {...props}>
+}) => (
+  <StyledAlertDialogContent {...props}>
     {children}
   </StyledAlertDialogContent>
 );

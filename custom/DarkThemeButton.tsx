@@ -28,9 +28,9 @@ export function DarkThemeButton() {
       <Button
         onClick={() =>
           setTheme(
-            resolvedTheme.includes("dark")
-              ? resolvedTheme.replace("dark", "light")
-              : resolvedTheme.replace("light", "dark")
+            resolvedTheme?.includes("dark")
+              ? resolvedTheme?.replace("dark", "light")
+              : resolvedTheme?.replace("light", "dark") ?? ""
           )
         }
       >
@@ -46,7 +46,7 @@ export function DarkThemeButton() {
               onSelect={() =>
                 setTheme(
                   `${
-                    resolvedTheme.includes("dark") ? "dark" : "light"
+                    resolvedTheme?.includes("dark") ? "dark" : "light"
                   }-theme-pink`
                 )
               }
@@ -57,7 +57,7 @@ export function DarkThemeButton() {
               onSelect={() =>
                 setTheme(
                   `${
-                    resolvedTheme.includes("dark") ? "dark" : "light"
+                    resolvedTheme?.includes("dark") ? "dark" : "light"
                   }-theme-red`
                 )
               }
@@ -68,7 +68,7 @@ export function DarkThemeButton() {
               onSelect={() =>
                 setTheme(
                   `${
-                    resolvedTheme.includes("dark") ? "dark" : "light"
+                    resolvedTheme?.includes("dark") ? "dark" : "light"
                   }-theme-plum`
                 )
               }
@@ -79,7 +79,7 @@ export function DarkThemeButton() {
               onSelect={() =>
                 setTheme(
                   `${
-                    resolvedTheme.includes("dark") ? "dark" : "light"
+                    resolvedTheme?.includes("dark") ? "dark" : "light"
                   }-theme-green`
                 )
               }
