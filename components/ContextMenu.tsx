@@ -30,6 +30,8 @@ const ContextMenuContent = React.forwardRef<
   </ContextMenuPrimitive.Portal>
 ));
 
+ContextMenuContent.displayName = "ContextMenuContent";
+
 const ContextMenuItem = styled(ContextMenuPrimitive.Item, itemCss);
 const ContextMenuGroup = styled(ContextMenuPrimitive.Group, {});
 const ContextMenuLabel = styled(ContextMenuPrimitive.Label, labelCss);
@@ -63,6 +65,8 @@ const ContextMenuCheckboxItem = React.forwardRef<
     {children}
   </StyledContextMenuCheckboxItem>
 ));
+
+ContextMenuCheckboxItem.displayName = "ContextMenuCheckboxItem";
 
 const ContextMenuRadioGroup = styled(ContextMenuPrimitive.RadioGroup, {});
 const StyledContextMenuRadioItem = styled(
@@ -106,6 +110,8 @@ const ContextMenuRadioItem = React.forwardRef<
     {children}
   </StyledContextMenuRadioItem>
 ));
+
+ContextMenuRadioItem.displayName = "ContextMenuRadioItem";
 
 export {
   ContextMenu,

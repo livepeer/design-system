@@ -130,6 +130,8 @@ const SheetContent = React.forwardRef<
   </DialogPrimitive.Portal>
 ));
 
+SheetContent.displayName = "SheetContent";
+
 const SheetClose = DialogPrimitive.Close;
 const SheetTitle = DialogPrimitive.Title;
 const SheetDescription = DialogPrimitive.Description;

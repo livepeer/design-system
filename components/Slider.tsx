@@ -110,3 +110,5 @@ export const Slider = React.forwardRef<
     </StyledSlider>
   );
 });
+
+Slider.displayName = "Slider";
