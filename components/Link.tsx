@@ -1,9 +1,7 @@
-import { Text } from "@modulz/design-system";
 import { styled } from "../stitches.config";
+import { Text } from "./Text";
 
-const DEFAULT_TAG = "a";
-
-export const Link = styled(DEFAULT_TAG, {
+export const Link = styled("a", {
   alignItems: "center",
   gap: "$1",
   flexShrink: 0,

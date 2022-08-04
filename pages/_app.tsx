@@ -2,9 +2,11 @@ import React from "react";
 import Head from "next/head";
 import "../styles.css";
 import { DesignSystemProvider } from "../";
-import { themeKeys, themes } from "../stitches.config";
+import { themeKeys, getThemes } from "../stitches.config";
 import { ThemeProvider } from "next-themes";
 import { AppProps } from "next/app";
+
+const themes = getThemes();
 
 function App({ Component, pageProps }: AppProps) {
   const themeMap = themeKeys.reduce(

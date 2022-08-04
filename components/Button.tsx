@@ -5,10 +5,8 @@ import {
   styled,
 } from "../stitches.config";
 
-const DEFAULT_TAG = "button";
-
 const colorVariants: { [key in NaturalPairingsKeys]?: CSS } = {};
-const compoundVariants = [];
+const compoundVariants: any[] = [];
 
 for (const color of naturalPairingsKeys) {
   colorVariants[color] = {
@@ -43,7 +41,7 @@ for (const color of naturalPairingsKeys) {
   });
 }
 
-export const Button = styled(DEFAULT_TAG, {
+export const Button = styled("button", {
   // Reset
   all: "unset",
   alignItems: "center",

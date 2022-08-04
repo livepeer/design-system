@@ -1,6 +1,10 @@
-import { keyframes, styled } from "../stitches.config";
-import React from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
+import { Cross1Icon } from "@radix-ui/react-icons";
+import React from "react";
+import { CSS, keyframes, styled } from "../stitches.config";
+import { IconButton } from "./IconButton";
+import { overlayStyles } from "./Overlay";
+import { panelStyles } from "./Panel";
 
 export type DialogProps = React.ComponentProps<typeof DialogPrimitive.Root> & {
   children: React.ReactNode;
@@ -21,7 +25,7 @@ const fadeout = keyframes({
   to: { opacity: 0 },
 });
 
-const StyledOverlay = styled(DialogPrimitive.Overlay, {
+const StyledOverlay = styled(DialogPrimitive.Overlay, overlayStyles, {
   position: "fixed",
   top: 0,
   right: 0,
@@ -55,7 +59,7 @@ export function Dialog({ children, ...props }: DialogProps) {
   );
 }
 
-const StyledDialogContent = styled(DialogPrimitive.Content, {
+const StyledDialogContent = styled(DialogPrimitive.Content, panelStyles, {
   position: "fixed",
   top: "50%",
   left: "50%",
@@ -72,6 +76,10 @@ const StyledDialogContent = styled(DialogPrimitive.Content, {
   "&:focus": {
     outline: "none",
   },
+
+  // Among other things, prevents text alignment inconsistencies when dialog can't be centered in the viewport evenly.
+  // Affects animated and non-animated dialogs alike.
+  willChange: "transform",
 
   variants: {
     animation: {
@@ -94,21 +102,39 @@ const StyledDialogContent = styled(DialogPrimitive.Content, {
   },
 });
 
-export type DialogContentProps = React.ComponentProps<
-  typeof DialogPrimitive.Root
-> & {
+const StyledCloseButton = styled(DialogPrimitive.Close, {
+  position: "absolute",
+  top: "$2",
+  right: "$2",
+  cursor: "pointer"
+});
+
+type DialogContentPrimitiveProps = React.ComponentProps<
+  typeof DialogPrimitive.Content
+>;
+type DialogContentProps = DialogContentPrimitiveProps & {
+  css?: CSS;
   animation?: "scale" | "fade";
 };
 
-export const DialogContent = ({
-  children,
-  animation = "scale",
-  ...props
-}: DialogContentProps) => (
-  <StyledDialogContent animation={animation} {...props}>
-    {children}
-  </StyledDialogContent>
-);
+export const DialogContent = React.forwardRef<
+  React.ElementRef<typeof StyledDialogContent>,
+  DialogContentProps
+>(({ children, animation = "scale", ...props }, forwardedRef) => (
+  <DialogPrimitive.Portal>
+    <StyledOverlay />
+    <StyledDialogContent {...props} ref={forwardedRef}>
+      {children}
+      <StyledCloseButton asChild>
+        <IconButton variant="ghost">
+          <Cross1Icon />
+        </IconButton>
+      </StyledCloseButton>
+    </StyledDialogContent>
+  </DialogPrimitive.Portal>
+));
+
+DialogContent.displayName = "DialogContent";
 
 export const DialogTrigger = DialogPrimitive.Trigger;
 export const DialogTitle = DialogPrimitive.Title;

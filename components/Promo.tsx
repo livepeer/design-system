@@ -1,8 +1,6 @@
 import { styled } from "../stitches.config";
 
-const DEFAULT_TAG = "div";
-
-export const Promo = styled(DEFAULT_TAG, {
+export const Promo = styled("div", {
   // Reset
   boxSizing: "border-box",
   "&::before": {

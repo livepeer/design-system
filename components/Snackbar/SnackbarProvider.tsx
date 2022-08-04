@@ -1,4 +1,4 @@
-import { Box } from "@modulz/design-system";
+import { Box } from "../Box";
 import React, { createContext, useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import { CSSTransitionProps } from "react-transition-group/CSSTransition";

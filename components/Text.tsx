@@ -1,8 +1,6 @@
 import { styled } from "../stitches.config";
 
-const DEFAULT_TAG = "span";
-
-export const Text = styled(DEFAULT_TAG, {
+export const Text = styled("span", {
   // Reset
   lineHeight: 1.5,
   margin: "0",

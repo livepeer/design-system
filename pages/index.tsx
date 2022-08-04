@@ -1,5 +1,5 @@
 import React from "react";
-import { IconButton } from "../";
+import { IconButton, Tooltip } from "../";
 import { Container } from "../";
 import { Box } from "../";
 import { Flex } from "../";
@@ -104,10 +104,10 @@ import { DarkThemeButton } from "../custom/DarkThemeButton";
 
 import {
   Accordion,
-  AccordionButton,
+  AccordionTrigger,
   AccordionItem,
-  AccordionPanel,
-} from "../components/Accordian";
+  AccordionContent,
+} from "../components/Accordion";
 import { SnackbarProvider } from "../components/Snackbar";
 import { Button } from "../components/Button";
 import { Link } from "../components/Link";
@@ -528,6 +528,17 @@ function Home() {
             >
               <Text size="2" css={{ lineHeight: "20px" }}>
                 Label
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: "$1" }}>
+            <Link
+              href="#tooltip"
+              variant="subtle"
+              css={{ display: "inline-flex" }}
+            >
+              <Text size="2" css={{ lineHeight: "20px" }}>
+                Tooltip
               </Text>
             </Link>
           </Box>
@@ -1220,6 +1231,29 @@ function Home() {
                   The quick brown fox jumped over the lazy dog.
                 </Text>
               </Flex>
+            </Flex>
+          </Container>
+        </Section>
+        <Flex css={{ jc: "center" }}>
+          <Separator size="2" />
+        </Flex>
+        <Section size="3">
+          <Container size="2">
+            <Heading id="tooltip" css={{ mb: "$6", scrollMarginTop: "$7" }}>
+              Tooltip
+            </Heading>
+            <Flex css={{ fd: "column", gap: "$4" }}>
+              <Tooltip content="This tooltip has content which is single line">
+                <Button>This has a tooltip</Button>
+              </Tooltip>
+            </Flex>
+            <Flex css={{ fd: "column", gap: "$4" }}>
+              <Tooltip
+                multiline
+                content="This tooltip has content which is multiple lines and goes for a longer span of space"
+              >
+                <Button>This has a tooltip</Button>
+              </Tooltip>
             </Flex>
           </Container>
         </Section>
@@ -2396,12 +2430,12 @@ function Home() {
             </Heading>
             <Accordion type="single">
               <AccordionItem value="accordion-one">
-                <AccordionButton>
+                <AccordionTrigger>
                   <Text size="3" css={{ fontWeight: 500 }}>
                     Accordion one
                   </Text>
-                </AccordionButton>
-                <AccordionPanel>
+                </AccordionTrigger>
+                <AccordionContent>
                   <Text size="3" css={{ lineHeight: "23px" }}>
                     The other main improvement is with tables, which we will
                     probably use a lot. With horizontal overflow on small
@@ -2410,15 +2444,15 @@ function Home() {
                     to the user when focused, which also allows keyboard users
                     to navigate the overflow more easily.
                   </Text>
-                </AccordionPanel>
+                </AccordionContent>
               </AccordionItem>
               <AccordionItem value="accordion-two">
-                <AccordionButton>
+                <AccordionTrigger>
                   <Text size="3" css={{ fontWeight: 500 }}>
                     Accordion two
                   </Text>
-                </AccordionButton>
-                <AccordionPanel>
+                </AccordionTrigger>
+                <AccordionContent>
                   <Text size="3" css={{ lineHeight: "23px" }}>
                     The other main improvement is with tables, which we will
                     probably use a lot. With horizontal overflow on small
@@ -2427,15 +2461,15 @@ function Home() {
                     to the user when focused, which also allows keyboard users
                     to navigate the overflow more easily.
                   </Text>
-                </AccordionPanel>
+                </AccordionContent>
               </AccordionItem>
               <AccordionItem value="accordion-three">
-                <AccordionButton>
+                <AccordionTrigger>
                   <Text size="3" css={{ fontWeight: 500 }}>
                     Accordion one
                   </Text>
-                </AccordionButton>
-                <AccordionPanel>
+                </AccordionTrigger>
+                <AccordionContent>
                   <Text size="3" css={{ lineHeight: "23px" }}>
                     The other main improvement is with tables, which we will
                     probably use a lot. With horizontal overflow on small
@@ -2444,15 +2478,15 @@ function Home() {
                     to the user when focused, which also allows keyboard users
                     to navigate the overflow more easily.
                   </Text>
-                </AccordionPanel>
+                </AccordionContent>
               </AccordionItem>
               <AccordionItem value="accordion-four">
-                <AccordionButton>
+                <AccordionTrigger>
                   <Text size="3" css={{ fontWeight: 500 }}>
                     Accordion two
                   </Text>
-                </AccordionButton>
-                <AccordionPanel>
+                </AccordionTrigger>
+                <AccordionContent>
                   <Text size="3" css={{ lineHeight: "23px" }}>
                     The other main improvement is with tables, which we will
                     probably use a lot. With horizontal overflow on small
@@ -2461,7 +2495,7 @@ function Home() {
                     to the user when focused, which also allows keyboard users
                     to navigate the overflow more easily.
                   </Text>
-                </AccordionPanel>
+                </AccordionContent>
               </AccordionItem>
             </Accordion>
           </Container>

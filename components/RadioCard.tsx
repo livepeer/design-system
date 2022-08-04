@@ -1,10 +1,6 @@
 import React from "react";
-import { config } from "@modulz/design-system";
-import { styled } from "../stitches.config";
-import type * as Stitches from "@stitches/react";
+import { styled, CSS } from "../stitches.config";
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
-
-export type CSS = Stitches.CSS<typeof config>;
 
 export const RadioCardGroup = styled(RadioGroupPrimitive.Root, {
   display: "block",

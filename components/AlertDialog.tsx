@@ -1,6 +1,8 @@
 import { keyframes, styled } from "../stitches.config";
 import React from "react";
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog";
+import { overlayStyles } from "./Overlay";
+import { panelStyles } from "./Panel";
 
 type AlertDialogProps = React.ComponentProps<
   typeof AlertDialogPrimitive.Root
@@ -23,7 +25,7 @@ const fadeout = keyframes({
   to: { opacity: 0 },
 });
 
-const StyledOverlay = styled(AlertDialogPrimitive.Overlay, {
+const StyledOverlay = styled(AlertDialogPrimitive.Overlay, overlayStyles, {
   position: "fixed",
   top: 0,
   right: 0,
@@ -56,55 +58,71 @@ export function AlertDialog({ children, ...props }: AlertDialogProps) {
   );
 }
 
-const StyledAlertDialogContent = styled(AlertDialogPrimitive.Content, {
-  position: "fixed",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  maxHeight: "85vh",
-  padding: "$4",
-  marginTop: "-5vh",
-  backgroundColor: "$panel",
-  borderRadius: "$4",
-  boxShadow:
-    "$colors$shadowLight 0px 10px 38px -10px, $colors$shadowDark 0px 10px 20px -15px",
-  color: "$black",
+const StyledAlertDialogContent = styled(
+  AlertDialogPrimitive.Content,
+  panelStyles,
+  {
+    position: "fixed",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    minWidth: 200,
+    maxHeight: "85vh",
+    padding: "$4",
+    marginTop: "-5vh",
+    backgroundColor: "$panel",
+    borderRadius: "$4",
+    boxShadow:
+      "$colors$shadowLight 0px 10px 38px -10px, $colors$shadowDark 0px 10px 20px -15px",
+    color: "$black",
 
-  "&:focus": {
-    outline: "none",
-  },
+    "&:focus": {
+      outline: "none",
+    },
 
-  variants: {
-    animation: {
-      fade: {
-        '&[data-state="open"]': {
-          animation: `${fadeIn} 300ms ease-out`,
+    variants: {
+      animation: {
+        fade: {
+          '&[data-state="open"]': {
+            animation: `${fadeIn} 300ms ease-out`,
+          },
+
+          '&[data-state="closed"]': {
+            animation: `${fadeout} 200ms ease-out`,
+          },
         },
-
-        '&[data-state="closed"]': {
-          animation: `${fadeout} 200ms ease-out`,
+        scale: {
+          animation: `${fadeIn} 300ms ease-out, ${scaleIn} 200ms ease-out`,
         },
-      },
-      scale: {
-        animation: `${fadeIn} 300ms ease-out, ${scaleIn} 200ms ease-out`,
       },
     },
-  },
-  defaultVariants: {
-    animation: "scale",
-  },
-});
+    defaultVariants: {
+      animation: "scale",
+    },
+  }
+);
 
 export const AlertDialogContent: React.FC<
-  AlertDialogPrimitive.AlertDialogContentProps & { animation?: "scale" | "fade" }
+  AlertDialogPrimitive.AlertDialogContentProps & {
+    animation?: "scale" | "fade";
+  }
 > = ({ children, animation = "scale", ...props }) => (
   <StyledAlertDialogContent animation={animation} {...props}>
     {children}
   </StyledAlertDialogContent>
 );
 
-export const AlertDialogTrigger = AlertDialogPrimitive.Trigger;
-export const AlertDialogTitle = AlertDialogPrimitive.Title;
-export const AlertDialogDescription = AlertDialogPrimitive.Description;
-export const AlertDialogCancel = AlertDialogPrimitive.Cancel;
-export const AlertDialogAction = AlertDialogPrimitive.Action;
+const AlertDialogTitle = AlertDialogPrimitive.Title;
+const AlertDialogDescription = AlertDialogPrimitive.Description;
+const AlertDialogAction = AlertDialogPrimitive.Action;
+const AlertDialogCancel = AlertDialogPrimitive.Cancel;
+
+const AlertDialogTrigger = AlertDialogPrimitive.Trigger;
+
+export {
+  AlertDialogTrigger,
+  AlertDialogTitle,
+  AlertDialogDescription,
+  AlertDialogAction,
+  AlertDialogCancel,
+};
