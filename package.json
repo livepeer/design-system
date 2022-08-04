@@ -91,6 +91,5 @@
   },
   "resolutions": {
     "@stitches/react": "^1.2.8"
-  },
-  "packageManager": "yarn@3.2.2"
+  }
 }
