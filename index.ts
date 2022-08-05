@@ -15,7 +15,6 @@ export {
   Viewport as ScrollAreaViewport,
 } from "@radix-ui/react-scroll-area";
 
-// Customized modulz components
 export {
   Accordion,
   AccordionContent,
@@ -81,6 +80,7 @@ export { Heading } from "./components/Heading";
 export { IconButton } from "./components/IconButton";
 export { Image } from "./components/Image";
 export { Kbd } from "./components/Kbd";
+export { Label } from "./components/Label";
 export { Link } from "./components/Link";
 export {
   Menu,
@@ -102,6 +102,7 @@ export {
   PopoverTrigger,
 } from "./components/Popover";
 export { ProgressBar } from "./components/ProgressBar";
+export { Promo } from "./components/Promo";
 export { Radio, RadioGroup } from "./components/Radio";
 export { RadioCard, RadioCardGroup } from "./components/RadioCard";
 export { Section } from "./components/Section";
@@ -118,6 +119,7 @@ export {
 export { SimpleToggle } from "./components/SimpleToggle";
 export { Skeleton } from "./components/Skeleton";
 export { Slider } from "./components/Slider";
+export { SnackbarProvider, useSnackbar } from "./components/Snackbar";
 export { Status } from "./components/Status";
 export { Sub } from "./components/Sub";
 export { Sup } from "./components/Sup";
@@ -146,8 +148,8 @@ export {
   config,
   css,
   getCssText,
+  getThemes,
   globalCss,
   keyframes,
   styled,
-  getThemes
 } from "./stitches.config";

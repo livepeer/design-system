@@ -458,6 +458,7 @@ const darkThemeColors = {
 } as const;
 
 export const naturalPairingsKeys = [
+  "gray",
   "tomato",
   "red",
   "crimson",
@@ -515,6 +516,7 @@ export const naturalPairings: NaturalPairings = {
   amber: "sand",
   orange: "sand",
   brown: "sand",
+  gray: "sand",
 } as const;
 
 export type ThemeKey =
@@ -530,6 +532,7 @@ export const themeKeys: ThemeKey[] = [
   ),
 ];
 
+// TODO fix this typing
 export const getThemes = () => {
   const themes = naturalPairingsKeys.reduce(
     (prev, primary) => ({
