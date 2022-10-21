@@ -107,7 +107,7 @@ export const AlertDialogContent: React.FC<
     animation?: "scale" | "fade";
   }
 > = ({ children, animation = "scale", ...props }) => (
-  <StyledAlertDialogContent animation={animation} {...props}>
+  <StyledAlertDialogContent animation={animation} {...props} style={{ overflow: 'auto' }}>
     {children}
   </StyledAlertDialogContent>
 );

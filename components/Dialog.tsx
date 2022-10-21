@@ -122,7 +122,7 @@ export const DialogContent = React.forwardRef<
 >(({ children, animation = "scale", ...props }, forwardedRef) => (
   <DialogPrimitive.Portal>
     <StyledOverlay />
-    <StyledDialogContent {...props} ref={forwardedRef}>
+    <StyledDialogContent {...props} ref={forwardedRef} style={{ overflow: 'auto' }}>
       {children}
       <StyledCloseButton asChild>
         <IconButton variant="ghost">
