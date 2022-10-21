@@ -33,6 +33,7 @@ const StyledOverlay = styled(DialogPrimitive.Overlay, overlayStyles, {
   left: 0,
   backgroundColor: "rgba(0,0,0,.35)",
   inset: 0,
+  zIndex: 1000,
 
   variants: {
     animation: {
@@ -71,6 +72,7 @@ const StyledDialogContent = styled(DialogPrimitive.Content, panelStyles, {
   boxShadow:
     "$colors$shadowLight 0px 10px 38px -10px, $colors$shadowDark 0px 10px 20px -15px",
   color: "$black",
+  zIndex: 1001,
 
   "&:focus": {
     outline: "none",
