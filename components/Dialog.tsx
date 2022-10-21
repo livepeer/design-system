@@ -32,7 +32,6 @@ const StyledOverlay = styled(DialogPrimitive.Overlay, overlayStyles, {
   bottom: 0,
   left: 0,
   backgroundColor: "rgba(0,0,0,.35)",
-  backdropFilter: "blur(5px)",
   inset: 0,
 
   variants: {
