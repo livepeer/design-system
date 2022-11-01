@@ -33,6 +33,7 @@ const StyledOverlay = styled(AlertDialogPrimitive.Overlay, overlayStyles, {
   left: 0,
   backgroundColor: "rgba(0,0,0,.35)",
   inset: 0,
+  zIndex: 1000,
 
   variants: {
     animation: {
@@ -75,6 +76,7 @@ const StyledAlertDialogContent = styled(
     boxShadow:
       "$colors$shadowLight 0px 10px 38px -10px, $colors$shadowDark 0px 10px 20px -15px",
     color: "$black",
+    zIndex: 1001,
 
     "&:focus": {
       outline: "none",
@@ -107,7 +109,7 @@ export const AlertDialogContent: React.FC<
     animation?: "scale" | "fade";
   }
 > = ({ children, animation = "scale", ...props }) => (
-  <StyledAlertDialogContent animation={animation} {...props}>
+  <StyledAlertDialogContent animation={animation} {...props} style={{ overflow: 'auto' }}>
     {children}
   </StyledAlertDialogContent>
 );

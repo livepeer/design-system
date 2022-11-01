@@ -2209,33 +2209,21 @@ function Home() {
                   </Heading>
                 </DialogTitle>
                 <DialogDescription asChild>
-                  <Text css={{ lineHeight: "25px" }}>
-                    There are 5 variants to choose from. Use is for positive
-                    states. This is a link Traditional business literature will
-                    not help you solve it- most of that stuff is focused on life
-                    after product/market fit, after the Trough of Sorrow.
-                  </Text>
-                </DialogDescription>
-              </DialogContent>
-            </Dialog>
-
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button>Open dialog</Button>
-              </DialogTrigger>
-              <DialogContent>
-                <DialogTitle asChild>
-                  <Heading size="4" css={{ fontWeight: 500, mb: "$3" }}>
-                    Dialog Heading
-                  </Heading>
-                </DialogTitle>
-                <DialogDescription asChild>
-                  <Text css={{ lineHeight: "25px" }}>
-                    There are 5 variants to choose from. Use is for positive
-                    states. This is a link Traditional business literature will
-                    not help you solve it- most of that stuff is focused on life
-                    after product/market fit, after the Trough of Sorrow.
-                  </Text>
+                  <>
+                    <Text css={{ lineHeight: "25px" }}>
+                      There are 5 variants to choose from. Use is for positive
+                      states. This is a link Traditional business literature will
+                      not help you solve it- most of that stuff is focused on life
+                      after product/market fit, after the Trough of Sorrow.
+                    </Text>
+                    <Text css={{ lineHeight: "25px", my: "$3" }}>
+                      There are 5 variants to choose from. Use is for positive
+                      states. This is a link Traditional business literature will
+                      not help you solve it- most of that stuff is focused on life
+                      after product/market fit, after the Trough of Sorrow.
+                    </Text>
+                    <Button variant="blue">Button</Button>
+                  </>
                 </DialogDescription>
               </DialogContent>
             </Dialog>

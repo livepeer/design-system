@@ -32,8 +32,8 @@ const StyledOverlay = styled(DialogPrimitive.Overlay, overlayStyles, {
   bottom: 0,
   left: 0,
   backgroundColor: "rgba(0,0,0,.35)",
-  backdropFilter: "blur(5px)",
   inset: 0,
+  zIndex: 1000,
 
   variants: {
     animation: {
@@ -72,6 +72,7 @@ const StyledDialogContent = styled(DialogPrimitive.Content, panelStyles, {
   boxShadow:
     "$colors$shadowLight 0px 10px 38px -10px, $colors$shadowDark 0px 10px 20px -15px",
   color: "$black",
+  zIndex: 1001,
 
   "&:focus": {
     outline: "none",
@@ -123,7 +124,7 @@ export const DialogContent = React.forwardRef<
 >(({ children, animation = "scale", ...props }, forwardedRef) => (
   <DialogPrimitive.Portal>
     <StyledOverlay />
-    <StyledDialogContent {...props} ref={forwardedRef}>
+    <StyledDialogContent {...props} ref={forwardedRef} style={{ overflow: 'auto' }}>
       {children}
       <StyledCloseButton asChild>
         <IconButton variant="ghost">
