@@ -69,22 +69,11 @@ export function DarkThemeButton() {
                 setTheme(
                   `${
                     resolvedTheme?.includes("dark") ? "dark" : "light"
-                  }-theme-plum`
-                )
-              }
-            >
-              Item
-            </DropdownMenuItem>
-            <DropdownMenuItem
-              onSelect={() =>
-                setTheme(
-                  `${
-                    resolvedTheme?.includes("dark") ? "dark" : "light"
                   }-theme-green`
                 )
               }
             >
-              Item
+              Green
             </DropdownMenuItem>
           </DropdownMenuGroup>
         </DropdownMenuContent>

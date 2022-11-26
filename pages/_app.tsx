@@ -24,8 +24,8 @@ function App({ Component, pageProps }: AppProps) {
         defaultTheme="system"
         value={{
           ...themeMap,
-          dark: "dark-theme-violet",
-          light: "light-theme-violet",
+          dark: "dark-theme-green",
+          light: "light-theme-green",
         }}
       >
         <div>
