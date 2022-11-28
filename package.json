@@ -61,7 +61,7 @@
   },
   "devDependencies": {
     "@next/mdx": "^12.2.4",
-    "@rollup/plugin-commonjs": "^22.0.1",
+    "@rollup/plugin-commonjs": "^23.0.3",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@types/bezier-easing": "^2.1.2",
     "@types/chroma-js": "^2.1.4",
