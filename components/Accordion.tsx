@@ -6,7 +6,7 @@ import { ChevronDownIcon } from "@radix-ui/react-icons";
 
 const StyledAccordion = styled(AccordionPrimitive.Root, {
   boxShadow: "0 0 0 1px $colors$neutral6",
-  borderRadius: "$1",
+  borderRadius: "$2",
 });
 
 type AccordionPrimitiveProps = React.ComponentProps<
@@ -31,9 +31,25 @@ Accordion.displayName = "Accordion";
 
 const StyledItem = styled(AccordionPrimitive.Item, {
   borderTop: "1px solid $colors$slate6",
-
+  "&:first-of-type": {
+    borderTop: "none",
+  },
   "&:last-of-type": {
-    borderBottom: "1px solid $colors$slate6",
+    borderBottom: "none",
+  },
+  "&:hover": {
+    "&:first-of-type": {
+      button: {
+        borderTopLeftRadius: "$2",
+        borderTopRightRadius: "$2",
+      },
+    },
+    "&:last-of-type": {
+      button: {
+        borderBottomLeftRadius: "$2",
+        borderBottomRightRadius: "$2",
+      },
+    },
   },
 });
 
@@ -59,10 +75,8 @@ const StyledTrigger = styled(AccordionPrimitive.Trigger, {
   color: "$hiContrast",
   width: "100%",
 
-  "@hover": {
-    "&:hover": {
-      backgroundColor: "$slate2",
-    },
+  "&:hover": {
+    backgroundColor: "$slate2",
   },
 
   "&:focus": {
