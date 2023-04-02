@@ -67,7 +67,7 @@ export const Button = styled("button", {
   height: "$5",
   fontFamily: "$body",
   fontSize: "$2",
-  fontWeight: 600,
+  fontWeight: 500,
   ai: "center",
   cursor: "pointer",
   px: "$3",
