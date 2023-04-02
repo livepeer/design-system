@@ -24,6 +24,8 @@ for (const color of naturalPairingsKeys) {
     variant: color,
     ghost: "true",
     css: {
+      color: `$${color}9`,
+      fontWeight: 600,
       bc: "transparent",
       "&:hover": {
         bc: `$${color}3`,
@@ -63,10 +65,9 @@ export const Button = styled("button", {
 
   // Custom
   height: "$5",
-
   fontFamily: "$body",
   fontSize: "$2",
-  fontWeight: 600,
+  fontWeight: 500,
   ai: "center",
   cursor: "pointer",
   px: "$3",
@@ -90,7 +91,7 @@ export const Button = styled("button", {
         lineHeight: "$sizes$5",
       },
       "2": {
-        borderRadius: "$2",
+        borderRadius: "$1",
         height: "$5",
         px: "$3",
         py: "$3",
@@ -98,10 +99,10 @@ export const Button = styled("button", {
         lineHeight: "$sizes$6",
       },
       "3": {
-        borderRadius: "$2",
+        borderRadius: "$1",
         height: "$6",
         px: "$3",
-        fontSize: "$3",
+        fontSize: "$2",
         lineHeight: "$sizes$6",
       },
       "4": {
@@ -128,8 +129,9 @@ export const Button = styled("button", {
           },
       },
       neutral: {
+        border: "1px solid $neutral7",
         bc: "$neutral4",
-        color: "white",
+        color: "$neutral12",
         "&:hover": { bc: "$neutral5" },
         "&:active": { bc: "$neutral6" },
         "&:disabled": {
@@ -179,6 +181,8 @@ export const Button = styled("button", {
       ghost: "true",
       css: {
         bc: "transparent",
+        color: "$primary9",
+        fontWeight: 600,
         "&:hover": {
           bc: "$primary3",
           boxShadow: "none",
@@ -198,7 +202,8 @@ export const Button = styled("button", {
       ghost: "true",
       css: {
         bc: "transparent",
-        color: "$neutral11",
+        color: "$neutral12",
+        fontWeight: 600,
         "&:hover": {
           bc: "$neutral3",
           boxShadow: "none",
