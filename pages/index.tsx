@@ -1699,7 +1699,7 @@ function Home() {
                   m: "$4",
                 }}
               >
-                <Button variant="transparentWhite">Transparent</Button>
+                <Button ghost>Transparent</Button>
               </Box>
             </Box>
             <Box
@@ -1720,7 +1720,7 @@ function Home() {
                   m: "$4",
                 }}
               >
-                <Button variant="transparentBlack">Transparent</Button>
+                <Button ghost>Transparent</Button>
               </Box>
             </Box>
             <Flex css={{ gap: "$6", mt: "$6" }}>

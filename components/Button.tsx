@@ -67,7 +67,7 @@ export const Button = styled("button", {
   height: "$5",
   fontFamily: "$body",
   fontSize: "$2",
-  fontWeight: 500,
+  fontWeight: 600,
   ai: "center",
   cursor: "pointer",
   px: "$3",
@@ -109,7 +109,7 @@ export const Button = styled("button", {
         borderRadius: "$2",
         height: "$7",
         px: "$4",
-        fontSize: "$4",
+        fontSize: "$3",
         lineHeight: "$sizes$7",
       },
     },
@@ -144,29 +144,6 @@ export const Button = styled("button", {
           },
       },
       ...colorVariants,
-      transparentWhite: {
-        bc: "hsla(0,100%,100%,.2)",
-        color: "white",
-        "&:hover": {
-          bc: "hsla(0,100%,100%,.25)",
-        },
-        "&:active": {
-          bc: "hsla(0,100%,100%,.3)",
-        },
-        "&:disabled": {
-          opacity: 0.5,
-        },
-      },
-      transparentBlack: {
-        bc: "hsla(0,0%,0%,.2)",
-        color: "black",
-        "&:hover": {
-          bc: "hsla(0,0%,0%,.25)",
-        },
-        "&:active": {
-          bc: "hsla(0,0%,0%,.3)",
-        },
-      },
     },
     ghost: {
       true: {
@@ -201,6 +178,7 @@ export const Button = styled("button", {
       variant: "neutral",
       ghost: "true",
       css: {
+        border: "none",
         bc: "transparent",
         color: "$neutral12",
         fontWeight: 600,
