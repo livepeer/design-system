@@ -58,7 +58,6 @@ const StyledTrigger = styled(AccordionPrimitive.Trigger, {
   p: "$2",
   color: "$hiContrast",
   width: "100%",
-  cursor: "pointer",
 
   "@hover": {
     "&:hover": {

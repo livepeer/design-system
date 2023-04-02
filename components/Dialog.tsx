@@ -107,7 +107,6 @@ const StyledCloseButton = styled(DialogPrimitive.Close, {
   position: "absolute",
   top: "$2",
   right: "$2",
-  cursor: "pointer"
 });
 
 type DialogContentPrimitiveProps = React.ComponentProps<
@@ -124,7 +123,11 @@ export const DialogContent = React.forwardRef<
 >(({ children, animation = "scale", ...props }, forwardedRef) => (
   <DialogPrimitive.Portal>
     <StyledOverlay />
-    <StyledDialogContent {...props} ref={forwardedRef} style={{ overflow: 'auto' }}>
+    <StyledDialogContent
+      {...props}
+      ref={forwardedRef}
+      style={{ overflow: "auto" }}
+    >
       {children}
       <StyledCloseButton asChild>
         <IconButton variant="ghost">

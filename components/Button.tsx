@@ -69,7 +69,6 @@ export const Button = styled("button", {
   fontSize: "$2",
   fontWeight: 500,
   ai: "center",
-  cursor: "pointer",
   px: "$3",
   bc: "$neutral4",
   borderRadius: "$2",

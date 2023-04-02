@@ -186,7 +186,6 @@ export const SnackbarProvider = ({ children }: Props) => {
                   height: "36px",
                   padding: "8px",
                   margin: "0 8px 0 0",
-                  cursor: "pointer",
                   position: "relative",
                   pointerEvents: "auto",
                   WebkitTapHighlightColor: "transparent",
