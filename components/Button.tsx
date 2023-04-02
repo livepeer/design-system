@@ -128,10 +128,10 @@ export const Button = styled("button", {
           },
       },
       neutral: {
-        bc: "$neutral8",
+        bc: "$neutral6",
         color: "white",
-        "&:hover": { bc: "$neutral10" },
-        "&:active": { bc: "$neutral11" },
+        "&:hover": { bc: "$neutral7" },
+        "&:active": { bc: "$neutral8" },
         "&:disabled": {
           opacity: 0.5,
         },
