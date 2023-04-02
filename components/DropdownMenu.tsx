@@ -18,7 +18,7 @@ for (const color of naturalPairingsKeys) {
   colorVariants[color] = {
     "&:focus": {
       outline: "none",
-      backgroundColor: `$${color}4`,
+      backgroundColor: "$neutral4",
       color: "$hiContrast",
     },
   };
@@ -134,6 +134,9 @@ const DropdownMenuRadioItemBase = React.forwardRef<
 DropdownMenuRadioItemBase.displayName = "DropdownMenuRadioItemBase";
 
 const DropdownMenuItem = styled(DropdownMenuItemBase, {
+  "&:focus": {
+    backgroundColor: "$neutral4",
+  },
   variants: {
     color: {
       primary: {
@@ -145,9 +148,6 @@ const DropdownMenuItem = styled(DropdownMenuItemBase, {
       },
       ...colorVariants,
     },
-  },
-  defaultVariants: {
-    color: "primary",
   },
 });
 
@@ -170,6 +170,7 @@ const DropdownMenuRadioItem = styled(DropdownMenuRadioItemBase, {
 });
 
 const DropdownMenuCheckboxItem = styled(DropdownMenuCheckboxItemBase, {
+  backgroundColor: "$neutral4",
   variants: {
     color: {
       primary: {

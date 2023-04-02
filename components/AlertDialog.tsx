@@ -109,7 +109,11 @@ export const AlertDialogContent: React.FC<
     animation?: "scale" | "fade";
   }
 > = ({ children, animation = "scale", ...props }) => (
-  <StyledAlertDialogContent animation={animation} {...props} style={{ overflow: 'auto' }}>
+  <StyledAlertDialogContent
+    animation={animation}
+    {...props}
+    style={{ overflow: "auto" }}
+  >
     {children}
   </StyledAlertDialogContent>
 );
@@ -118,7 +122,7 @@ const AlertDialogTitle = AlertDialogPrimitive.Title;
 const AlertDialogDescription = AlertDialogPrimitive.Description;
 const AlertDialogAction = AlertDialogPrimitive.Action;
 const AlertDialogCancel = AlertDialogPrimitive.Cancel;
-
+const AlertDialogOverlay = AlertDialogPrimitive.Overlay;
 const AlertDialogTrigger = AlertDialogPrimitive.Trigger;
 
 export {
@@ -127,4 +131,5 @@ export {
   AlertDialogDescription,
   AlertDialogAction,
   AlertDialogCancel,
+  AlertDialogOverlay,
 };
