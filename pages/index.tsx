@@ -1636,8 +1636,8 @@ function Home() {
               <Button ghost variant="blue">
                 Blue
               </Button>
-              <Button ghost variant="yellow">
-                Yellow
+              <Button ghost variant="amber">
+                Amber
               </Button>
               <Button ghost variant="red">
                 Red
@@ -1647,7 +1647,7 @@ function Home() {
               <Button>Default</Button>
               <Button variant="primary">Primary</Button>
               <Button variant="blue">Blue</Button>
-              <Button variant="yellow">Yellow</Button>
+              <Button variant="amber">Amber</Button>
               <Button variant="red">Red</Button>
             </Flex>
             <Flex css={{ mt: "$6", gap: "$6" }}>
@@ -1658,8 +1658,8 @@ function Home() {
               <Button variant="blue" size="3">
                 Blue
               </Button>
-              <Button variant="yellow" size="3">
-                Yellow
+              <Button variant="amber" size="3">
+                Amber
               </Button>
               <Button variant="red" size="3">
                 Red
@@ -1673,8 +1673,8 @@ function Home() {
               <Button variant="blue" size="4">
                 Blue
               </Button>
-              <Button variant="yellow" size="4">
-                Yellow
+              <Button variant="amber" size="4">
+                Amber
               </Button>
               <Button variant="red" size="4">
                 Red
@@ -2212,15 +2212,17 @@ function Home() {
                   <>
                     <Text css={{ lineHeight: "25px" }}>
                       There are 5 variants to choose from. Use is for positive
-                      states. This is a link Traditional business literature will
-                      not help you solve it- most of that stuff is focused on life
-                      after product/market fit, after the Trough of Sorrow.
+                      states. This is a link Traditional business literature
+                      will not help you solve it- most of that stuff is focused
+                      on life after product/market fit, after the Trough of
+                      Sorrow.
                     </Text>
                     <Text css={{ lineHeight: "25px", my: "$3" }}>
                       There are 5 variants to choose from. Use is for positive
-                      states. This is a link Traditional business literature will
-                      not help you solve it- most of that stuff is focused on life
-                      after product/market fit, after the Trough of Sorrow.
+                      states. This is a link Traditional business literature
+                      will not help you solve it- most of that stuff is focused
+                      on life after product/market fit, after the Trough of
+                      Sorrow.
                     </Text>
                     <Button variant="blue">Button</Button>
                   </>

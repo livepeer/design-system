@@ -10,13 +10,13 @@ const compoundVariants: any[] = [];
 
 for (const color of naturalPairingsKeys) {
   colorVariants[color] = {
-    bc: `$${color}4`,
-    color: `$${color}11`,
-    "&:hover": { bc: `$${color}5` },
-    "&:active": { bc: `$${color}6` },
+    bc: `$${color}9`,
+    color: `white`,
+    "&:hover": { bc: `$${color}10` },
+    "&:active": { bc: `$${color}11` },
     '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
       {
-        bc: `$${color}4`,
+        bc: `$${color}9`,
         boxShadow: `inset 0 0 0 1px $colors$${color}8`,
       },
   };
@@ -83,14 +83,14 @@ export const Button = styled("button", {
   variants: {
     size: {
       "1": {
-        borderRadius: "$2",
+        borderRadius: "$1",
         height: "$5",
         px: "$2",
         fontSize: "$1",
         lineHeight: "$sizes$5",
       },
       "2": {
-        borderRadius: "$3",
+        borderRadius: "$2",
         height: "$5",
         px: "$3",
         py: "$3",
@@ -98,14 +98,14 @@ export const Button = styled("button", {
         lineHeight: "$sizes$6",
       },
       "3": {
-        borderRadius: "$3",
+        borderRadius: "$2",
         height: "$6",
         px: "$3",
         fontSize: "$3",
         lineHeight: "$sizes$6",
       },
       "4": {
-        borderRadius: "$4",
+        borderRadius: "$2",
         height: "$7",
         px: "$4",
         fontSize: "$4",
@@ -114,24 +114,24 @@ export const Button = styled("button", {
     },
     variant: {
       primary: {
-        bc: "$primary4",
-        color: "$primary11",
-        "&:hover": { bc: "$primary5" },
-        "&:active": { bc: "$primary6" },
+        bc: "$primary9",
+        color: `white`,
+        "&:hover": { bc: "$primary10" },
+        "&:active": { bc: "$primary11" },
         "&:disabled": {
           opacity: 0.5,
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
           {
-            bc: "$primary4",
+            bc: "$primary9",
             boxShadow: "inset 0 0 0 1px $colors$primary8",
           },
       },
       neutral: {
-        bc: "$neutral4",
-        color: "$neutral11",
-        "&:hover": { bc: "$neutral5" },
-        "&:active": { bc: "$neutral6" },
+        bc: "$neutral8",
+        color: "white",
+        "&:hover": { bc: "$neutral10" },
+        "&:active": { bc: "$neutral11" },
         "&:disabled": {
           opacity: 0.5,
         },
