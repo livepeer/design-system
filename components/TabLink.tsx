@@ -12,7 +12,7 @@ export const TabLink = styled("a", {
   outline: "none",
   alignItems: "center",
   justifyContent: "center",
-  color: "$slate11",
+  color: "$neutral11",
   textDecoration: "none",
   "@hover": {
     "&:hover": {
@@ -20,7 +20,7 @@ export const TabLink = styled("a", {
     },
   },
   "&:focus": {
-    boxShadow: "inset 0 0 0 1px $colors$slate8, 0 0 0 1px $colors$slate8",
+    boxShadow: "inset 0 0 0 1px $colors$neutral8, 0 0 0 1px $colors$neutral8",
   },
 
   variants: {

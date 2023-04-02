@@ -1,6 +1,6 @@
 import { createStitches } from "@stitches/react";
 import type * as Stitches from "@stitches/react";
-export type { VariantProps } from '@stitches/react';
+export type { VariantProps } from "@stitches/react";
 
 import {
   gray,
@@ -114,8 +114,8 @@ export const {
       ...blackA,
 
       // Semantic colors
-      hiContrast: "$slate12",
-      // loContrast: '$slate1',
+      hiContrast: "$neutral12",
+      // loContrast: '$neutral1',
       loContrast: "white",
       canvas: "hsl(0 0% 93%)",
       panel: "white",
@@ -381,10 +381,10 @@ export const darkTheme = createTheme("dark-theme", {
     ...goldDark,
 
     // Semantic colors
-    hiContrast: "$slate12",
-    loContrast: "$slate1",
+    hiContrast: "$neutral12",
+    loContrast: "$neutral1",
     canvas: "hsl(0 0% 15%)",
-    panel: "$slate3",
+    panel: "$neutral3",
     transparentPanel: "hsl(0 100% 100% / 97%)",
     shadowLight: "hsl(206 22% 7% / 35%)",
     shadowDark: "hsl(206 22% 7% / 20%)",
@@ -485,7 +485,7 @@ export const naturalPairingsKeys = [
   "brown",
 ] as const;
 
-export type NaturalPairingsKeys = typeof naturalPairingsKeys[number];
+export type NaturalPairingsKeys = (typeof naturalPairingsKeys)[number];
 
 export type NaturalPairings = {
   [K in NaturalPairingsKeys]: string;
@@ -621,9 +621,9 @@ export const getThemes = () => {
       }),
     }),
     {}
-  )
+  );
 
   return themes;
-}
+};
 
 export type CSS = Stitches.CSS<typeof config>;

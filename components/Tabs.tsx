@@ -21,7 +21,7 @@ const TabsTriggerBase = styled(TabsPrimitive.Trigger, {
   outline: "none",
   alignItems: "center",
   justifyContent: "center",
-  color: "$slate11",
+  color: "$neutral11",
   border: "1px solid transparent",
   borderTopLeftRadius: "$2",
   borderTopRightRadius: "$2",
@@ -35,7 +35,7 @@ const TabsTriggerBase = styled(TabsPrimitive.Trigger, {
 
   '&[data-state="active"]': {
     color: "$hiContrast",
-    borderColor: "$slate6",
+    borderColor: "$neutral6",
     borderBottomColor: "transparent",
   },
 
@@ -46,7 +46,7 @@ const TabsTriggerBase = styled(TabsPrimitive.Trigger, {
     borderBottomColor: "transparent",
 
     '&[data-state="active"]': {
-      borderBottomColor: "$slate6",
+      borderBottomColor: "$neutral6",
       borderRightColor: "transparent",
     },
   },
@@ -57,11 +57,11 @@ const StyledTabsListBase = styled(TabsPrimitive.List, {
   display: "flex",
   "&:focus": {
     outline: "none",
-    boxShadow: "inset 0 0 0 1px $slate8, 0 0 0 1px $slate8",
+    boxShadow: "inset 0 0 0 1px $neutral8, 0 0 0 1px $neutral8",
   },
   '&[data-orientation="vertical"]': {
     flexDirection: "column",
-    boxShadow: "inset -1px 0 0 $slate6",
+    boxShadow: "inset -1px 0 0 $neutral6",
   },
 });
 
@@ -84,7 +84,7 @@ const TabsContentBase = styled(TabsPrimitive.Content, {
   flexGrow: 1,
   "&:focus": {
     outline: "none",
-    boxShadow: "inset 0 0 0 1px $slate8, 0 0 0 1px $slate8",
+    boxShadow: "inset 0 0 0 1px $neutral8, 0 0 0 1px $neutral8",
   },
 });
 

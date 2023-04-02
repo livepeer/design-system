@@ -18,9 +18,9 @@ export const Badge = styled("span", {
   userSelect: "none",
   WebkitTapHighlightColor: "rgba(0,0,0,0)",
   "&:disabled": {
-    backgroundColor: "$slate3",
+    backgroundColor: "$neutral3",
     pointerEvents: "none",
-    color: "$slate8",
+    color: "$neutral8",
   },
   "&::before": {
     boxSizing: "border-box",
@@ -32,9 +32,9 @@ export const Badge = styled("span", {
   },
 
   // Custom
-  backgroundColor: "$slate3",
+  backgroundColor: "$neutral3",
   borderRadius: "$pill",
-  color: "$slate11",
+  color: "$neutral11",
   whiteSpace: "nowrap",
 
   variants: {
@@ -68,10 +68,11 @@ export const Badge = styled("span", {
         },
       },
       gray: {
-        backgroundColor: "$slate3",
-        color: "$slate11",
+        backgroundColor: "$neutral3",
+        color: "$neutral11",
         "&:focus": {
-          boxShadow: "inset 0 0 0 1px $colors$slate8, 0 0 0 1px $colors$slate8",
+          boxShadow:
+            "inset 0 0 0 1px $colors$neutral8, 0 0 0 1px $colors$neutral8",
         },
       },
       red: {

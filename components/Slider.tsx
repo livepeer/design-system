@@ -5,7 +5,7 @@ import * as SliderPrimitive from "@radix-ui/react-slider";
 const SliderTrack = styled(SliderPrimitive.Track, {
   position: "relative",
   flexGrow: 1,
-  backgroundColor: "$slate7",
+  backgroundColor: "$neutral7",
   borderRadius: "$pill",
   '&[data-orientation="horizontal"]': {
     height: 2,
@@ -78,7 +78,7 @@ export const StyledSlider = styled(SliderPrimitive.Root, {
   "@hover": {
     "&:hover": {
       [`& ${SliderTrack}`]: {
-        backgroundColor: "$slate8",
+        backgroundColor: "$neutral8",
       },
       [`& ${SliderThumb}`]: {
         opacity: "1",

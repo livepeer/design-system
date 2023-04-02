@@ -9,8 +9,8 @@ export const Code = styled("code", {
   variants: {
     variant: {
       gray: {
-        backgroundColor: "$slate3",
-        color: "$slate11",
+        backgroundColor: "$neutral3",
+        color: "$neutral11",
       },
       violet: {
         backgroundColor: "$violet3",

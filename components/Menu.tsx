@@ -32,12 +32,12 @@ export const itemCss = css(baseItemCss, {
   },
 
   "&[data-disabled]": {
-    color: "$slate9",
+    color: "$neutral9",
   },
 });
 
 export const labelCss = css(baseItemCss, {
-  color: "$slate11",
+  color: "$neutral11",
 });
 
 export const menuCss = css({
@@ -49,7 +49,7 @@ export const menuCss = css({
 export const separatorCss = css({
   height: 1,
   my: "$1",
-  backgroundColor: "$slate6",
+  backgroundColor: "$neutral6",
 });
 
 export const Menu = styled(MenuPrimitive.Root, menuCss);

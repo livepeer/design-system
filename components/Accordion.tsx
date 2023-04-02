@@ -30,7 +30,7 @@ export const Accordion = React.forwardRef<
 Accordion.displayName = "Accordion";
 
 const StyledItem = styled(AccordionPrimitive.Item, {
-  borderTop: "1px solid $colors$slate6",
+  borderTop: "1px solid $colors$neutral6",
   "&:first-of-type": {
     borderTop: "none",
   },
@@ -76,12 +76,12 @@ const StyledTrigger = styled(AccordionPrimitive.Trigger, {
   width: "100%",
 
   "&:hover": {
-    backgroundColor: "$slate2",
+    backgroundColor: "$neutral2",
   },
 
   "&:focus": {
     outline: "none",
-    boxShadow: "inset 0 0 0 1px $colors$slate8, 0 0 0 1px $colors$slate8",
+    boxShadow: "inset 0 0 0 1px $colors$neutral8, 0 0 0 1px $colors$neutral8",
   },
 
   svg: {
