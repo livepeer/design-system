@@ -31,6 +31,7 @@ Accordion.displayName = "Accordion";
 
 const StyledItem = styled(AccordionPrimitive.Item, {
   borderTop: "1px solid $colors$neutral6",
+  "button:focus": { boxShadow: "none" },
   "&:first-of-type": {
     borderTop: "none",
   },
