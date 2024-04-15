@@ -508,8 +508,8 @@ export const getThemes = () => {
         colors: {
           ...lightThemeColors,
 
-          primary: "#000",
-          background: "#fff",
+          primary: "hsl(0, 0%, 0%)",
+          background: "hsl(0, 0%, 100%)",
 
           // Semantic colors
           primary1: `$${primary}1`,
@@ -552,8 +552,8 @@ export const getThemes = () => {
         colors: {
           ...darkThemeColors,
 
-          primary: "#fff",
-          background: "#000",
+          primary: "hsl(0, 0%, 100%)",
+          background: "hsl(0, 0%, 0%)",
 
           // Semantic colors
           primary1: `$${primary}1`,
