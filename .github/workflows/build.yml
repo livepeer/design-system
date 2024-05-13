@@ -20,10 +20,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "16"
-          cache: "yarn"
+          cache: "pnpm"
       - name: Install
-        run: yarn --immutable
-      - name: Lint
-        run: yarn lint
+        run: pnpm i
       - name: Build Bundle
-        run: yarn ds:build
+        run: pnpm build

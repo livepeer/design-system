@@ -6,15 +6,8 @@
 .pnp.js
 .yarn/cache/
 
-# testing
-/coverage
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
+# output
+dist/
 
 # misc
 .DS_Store
