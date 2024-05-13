@@ -1,0 +1,56 @@
+{
+	"name": "@livepeer/design-system",
+	"version": "2.0.0",
+	"license": "MIT",
+	"main": "dist/index.js",
+	"module": "dist/index.es.js",
+	"files": [
+		"dist"
+	],
+	"types": "dist/index.d.ts",
+	"exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./config": {
+      "import": "./dist/config.es.js",
+      "require": "./dist/config.js",
+      "default": "./dist/config.js"
+    },
+    "./icons": {
+      "import": "./dist/icons.es.js",
+      "require": "./dist/icons.js",
+      "default": "./dist/icons.js"
+    }
+  },
+	"scripts": {
+		"build": "rollup -c",
+		"dev": "rollup -c -w"
+	},
+	"peerDependencies": {
+		"react": "17.0.1",
+		"react-dom": "17.0.1"
+	},
+	"dependencies": {
+		"@tamagui/config": "^1.98.0",
+		"@tamagui/lucide-icons": "^1.98.0",
+		"@tamagui/toast": "^1.98.0",
+		"tamagui": "^1.98.0"
+	},
+	"devDependencies": {
+		"@rollup/plugin-typescript": "^11.1.6",
+		"@types/node": "18.6.4",
+		"@types/react": "^18.0.15",
+		"eslint": "8.21.0",
+		"lint-staged": "^13.0.3",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"rollup": "^2.77.2",
+		"typescript": "4.7.4"
+	},
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org"
+	}
+}
