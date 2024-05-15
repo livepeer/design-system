@@ -4110,10 +4110,10 @@ rc@1.2.8, rc@^1.2.8:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-bezier-curve-editor@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/react-bezier-curve-editor/-/react-bezier-curve-editor-1.1.2.tgz#403c4b9769e83e8989007e04f56ffdb5fda38830"
-  integrity sha512-FzYwbtmf4W2aNGfEzMMMsJJ1b9aGVVhStuYwI1pPEunZgMJZBM/oBIYFthKmp4d0TEKQ7BN6oN+0E9TXtNzCKg==
+react-bezier-curve-editor@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/react-bezier-curve-editor/-/react-bezier-curve-editor-2.1.0.tgz#d38c95963af63e36f0e77f5b4ac5f07c03df2cf2"
+  integrity sha512-0OB5rflXAkVchTlwGK5WZSSelpdDOK5rWbzJp3VfRPI449SVLPMvijNR+w4QwmKR2Y84BPANev5I1ZEXJ45bSg==
   dependencies:
     classnames "^2.2.6"
 
