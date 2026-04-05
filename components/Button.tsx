@@ -144,6 +144,21 @@ export const Button = styled("button", {
             boxShadow: "inset 0 0 0 1px $colors$primary8",
           },
       },
+      outline: {
+        border: "1px solid $neutral7",
+        bc: "$neutral4",
+        color: "$neutral12",
+        "&:hover": { bc: "$neutral5" },
+        "&:active": { bc: "$neutral6" },
+        "&:disabled": {
+          opacity: 0.5,
+        },
+        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
+          {
+            bc: "$neutral4",
+            boxShadow: "inset 0 0 0 1px $colors$primary8",
+          },
+      },
       ...colorVariants,
     },
     ghost: {
