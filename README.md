@@ -29,6 +29,10 @@ The design system is consumed by apps such as the [Livepeer Explorer](https://gi
 # one-time install
 npm i -g yalc
 
+# first-time publish from design-system (populates ~/.yalc/packages)
+yarn ds:build
+yalc publish
+
 # one-time, in each consumer app
 yalc add @livepeer/design-system
 pnpm install    # or yarn install
@@ -37,7 +41,17 @@ pnpm install    # or yarn install
 yarn ds:build && yalc push
 ```
 
-`yalc push` propagates the new build to every consumer that ran `yalc add`. To unlink: run `yalc remove @livepeer/design-system` in each consumer and restore the original dependency version.
+`yalc publish` puts the package in your local yalc store so consumers can `yalc add` it. `yalc push` rebuilds the store entry *and* propagates the new build to every consumer that has already added it. To unlink: run `yalc remove @livepeer/design-system` in each consumer and restore the original dependency version.
+
+For a faster dev loop, run rollup in watch mode and push manually when you want to test:
+
+```bash
+# terminal 1: rebuild on save
+rollup -c -w
+
+# terminal 2: sync to consumers
+yalc push
+```
 
 > [!TIP]
-> Run `rollup -c -w` in a separate terminal to rebuild on save, then `yalc push` after each rebuild.
+> Next.js sometimes ignores changes inside `node_modules`. If HMR doesn't fire after `yalc push`, touch a source file in the consumer app or restart its dev server.
