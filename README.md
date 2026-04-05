@@ -21,38 +21,56 @@ yarn install
 yarn dev        # docs site at http://localhost:3000
 ```
 
-### Testing changes in the Livepeer Explorer
+### Testing changes in consumer apps
 
-The design system is consumed by the [Livepeer Explorer](https://github.com/livepeer/explorer) app. To validate changes locally before publishing:
+The design system is consumed by apps such as the [Livepeer Explorer](https://github.com/livepeer/explorer). Pick the workflow that matches how many consumers you need to test against.
 
-1. Build the package in this repo:
+#### Single consumer — `file:` protocol
+
+Simplest for testing against one app:
+
+1. Build the package:
 
    ```bash
    yarn ds:build
    ```
 
-2. Point Explorer at your local checkout by editing its `package.json`:
+2. Point the consumer at your local checkout (edit its `package.json`):
 
    ```json
    "@livepeer/design-system": "file:../path/to/design-system"
    ```
 
-3. Reinstall in Explorer to copy the local build:
+3. Reinstall in the consumer to copy the local build:
 
    ```bash
    pnpm install    # or yarn install
    ```
 
-4. After each change in the design system, re-run `yarn ds:build` here, then `pnpm install` in Explorer to pick up the new build.
+4. After each change, re-run `yarn ds:build` here and `pnpm install` in the consumer.
 
-**Why `file:` and not `pnpm link` / `yarn link`?** Symlinks cause duplicate React instances (the linked package resolves React from its own `node_modules` instead of Explorer's), which breaks hooks with "Invalid hook call" errors. The `file:` protocol copies files into Explorer's `node_modules`, so peer dependencies resolve correctly.
+When done, restore the original version in the consumer's `package.json` and reinstall.
+
+#### Multiple consumers — `yalc`
+
+Use [yalc](https://github.com/wclr/yalc) when testing against 2+ consumer apps. One push updates them all.
+
+```bash
+# one-time install
+npm i -g yalc
+
+# one-time, in each consumer
+yalc add @livepeer/design-system
+pnpm install
+
+# in design-system, after each change
+yarn ds:build && yalc push
+```
+
+`yalc push` propagates the new build to every consumer that ran `yalc add`. To unlink: run `yalc remove @livepeer/design-system` in each consumer and restore the original dependency version.
+
+#### Why not `pnpm link` / `yarn link`?
+
+Symlinks cause duplicate React instances — the linked package resolves React from its own `node_modules` instead of the consumer's, which breaks hooks with "Invalid hook call" errors. Both `file:` and `yalc` copy files instead, so peer dependencies resolve correctly from the consumer.
 
 **Tip:** run `rollup -c -w` in a separate terminal to rebuild on save.
-
-### Reverting
-
-When you're done, restore the original version in Explorer's `package.json` and reinstall.
-
-## License
-
-Licensed under the [MIT](./LICENSE) license.
