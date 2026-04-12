@@ -17,13 +17,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
-          cache: "yarn"
+          node-version-file: ".nvmrc"
+          cache: "pnpm"
       - name: Install
-        run: yarn --immutable
+        run: pnpm install --frozen-lockfile
       - name: Lint
-        run: yarn lint
+        run: pnpm lint
       - name: Build Bundle
-        run: yarn ds:build
+        run: pnpm run ds:build
