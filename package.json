@@ -53,10 +53,13 @@
     "@radix-ui/react-tooltip": "1.0.6",
     "@radix-ui/react-use-layout-effect": "1.0.1",
     "@stitches/react": "^1.2.8",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "lodash.merge": "^4.6.2",
     "lodash.omit": "^4.5.0",
     "next-themes": "^0.2.0",
     "react-transition-group": "4.4.5",
+    "tailwind-merge": "^3.5.0",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
@@ -80,6 +83,7 @@
     "react": "^18.2.0",
     "react-bezier-curve-editor": "^1.1.2",
     "react-dom": "^18.2.0",
+    "tailwindcss": "^4.2.2",
     "tsup": "^8.5.1",
     "typescript": "4.7.4"
   },
