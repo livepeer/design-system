@@ -10,7 +10,7 @@ export default defineConfig({
   clean: true,
   tsconfig: "tsconfig.build.json",
   external: [/^@radix-ui/, /^react/, /^next/, /^@stitches/, /^tslib/],
-  esbuild: {
-    jsx: "transform",
+  esbuildOptions(options) {
+    options.jsx = "transform";
   },
 });

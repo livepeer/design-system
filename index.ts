@@ -143,6 +143,10 @@ export { Tooltip } from "./components/Tooltip";
 export { TreeItem } from "./components/TreeItem";
 export { VerifiedBadge } from "./components/VerifiedBadge";
 
+// Tailwind utilities
+export { cn } from "./lib/cn";
+export { cva, type VariantProps } from "class-variance-authority";
+
 // Stitches
 export {
   config,
