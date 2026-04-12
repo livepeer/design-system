@@ -18,8 +18,8 @@
     "ds:release": "pnpm run ds:build && np"
   },
   "peerDependencies": {
-    "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "dependencies": {
     "@radix-ui/colors": "0.1.8",
