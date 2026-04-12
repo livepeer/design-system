@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 .yarn/cache/
+.yalc/
+yalc.lock
 
 # testing
 /coverage
