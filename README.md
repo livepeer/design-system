@@ -48,11 +48,11 @@ pnpm run ds:build && yalc push
 
 `yalc publish` puts the package in your local yalc store so consumers can `yalc add` it. `yalc push` rebuilds the store entry *and* propagates the new build to every consumer that has already added it. To unlink: run `yalc remove @livepeer/design-system` in each consumer and restore the original dependency version.
 
-For a faster dev loop, run rollup in watch mode and push manually when you want to test:
+For a faster dev loop, run tsup in watch mode and push manually when you want to test:
 
 ```bash
 # terminal 1: rebuild on save
-rollup -c -w
+tsup --watch
 
 # terminal 2: sync to consumers
 yalc push

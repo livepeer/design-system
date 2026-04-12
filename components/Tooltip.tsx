@@ -49,6 +49,7 @@ export function Tooltip({
     <TooltipPrimitive.Root {...rootProps}>
       <TooltipPrimitive.Trigger asChild>{children}</TooltipPrimitive.Trigger>
       <TooltipPrimitive.Portal>
+        {/* @ts-expect-error — ref type mismatch between Stitches + old Radix types; fixed when migrating to Tailwind in v2.0 */}
         <StyledContent
           side="top"
           align="center"
