@@ -9,36 +9,41 @@ Visit [https://livepeer-design-system.vercel.app/](https://livepeer-design-syste
 ## Usage
 
 ```bash
-yarn add @livepeer/design-system
+pnpm add @livepeer/design-system
 ```
+
+## Prerequisites
+
+- **Node ≥ 20** — see `.nvmrc` (use `nvm use` or `fnm use` to activate)
+- **pnpm** — managed via [corepack](https://nodejs.org/api/corepack.html). Run `corepack enable` once, then the correct pnpm version activates automatically from the `packageManager` field in `package.json`.
 
 ## Local development
 
 ### Running the docs site
 
 ```bash
-yarn install
-yarn dev        # docs site at http://localhost:3000
+pnpm install
+pnpm dev        # docs site at http://localhost:3001
 ```
 
 ### Testing changes in consumer apps
 
-The design system is consumed by apps such as the [Livepeer Explorer](https://github.com/livepeer/explorer). Use [yalc](https://github.com/wclr/yalc) to test local changes against one or more consumers before publishing — it copies files into each consumer's `node_modules` rather than symlinking, which avoids the duplicate React instance / "Invalid hook call" errors you get from `pnpm link` or `yarn link`.
+The design system is consumed by apps such as the [Livepeer Explorer](https://github.com/livepeer/explorer). Use [yalc](https://github.com/wclr/yalc) to test local changes against one or more consumers before publishing — it copies files into each consumer's `node_modules` rather than symlinking, which avoids the duplicate React instance / "Invalid hook call" errors you get from `pnpm link`.
 
 ```bash
 # one-time install
 npm i -g yalc
 
 # first-time publish from design-system (populates ~/.yalc/packages)
-yarn ds:build
+pnpm run ds:build
 yalc publish
 
 # one-time, in each consumer app
 yalc add @livepeer/design-system
-pnpm install    # or yarn install
+pnpm install
 
 # in design-system, after each change
-yarn ds:build && yalc push
+pnpm run ds:build && yalc push
 ```
 
 `yalc publish` puts the package in your local yalc store so consumers can `yalc add` it. `yalc push` rebuilds the store entry *and* propagates the new build to every consumer that has already added it. To unlink: run `yalc remove @livepeer/design-system` in each consumer and restore the original dependency version.

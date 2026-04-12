@@ -1,5 +1,5 @@
-import typescript from "rollup-plugin-typescript2";
-import pkg from "./package.json";
+const typescript = require("rollup-plugin-typescript2");
+const pkg = require("./package.json");
 
 const config = {
   input: "./index.ts",
@@ -20,10 +20,12 @@ const config = {
   plugins: [
     typescript({
       clean: true,
+      check: false,
       tsconfig: "tsconfig-rollup.json",
       typescript: require("typescript"),
+      include: ["*.ts", "**/*.ts", "*.tsx", "**/*.tsx"],
     }),
   ],
 };
 
-export default config;
+module.exports = config;
